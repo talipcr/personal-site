@@ -1,0 +1,83 @@
+<div class="block mb-6 md:flex">
+  <div class="w-full max-w-150">
+    <a routerLink="/">
+      <img
+        class="
+          rounded-full
+          transform
+          transition-all
+          duration-150
+          hover:scale-105
+        "
+        src="https://avatars.githubusercontent.com/u/15056752?v=4"
+        alt="{{ name }}"
+      />
+    </a>
+  </div>
+  <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20">
+    <h1 class="text-5xl text-gray-900 font-bold leading-tight hover:text-black">
+      {{ name }}
+    </h1>
+    <p class="text-gray-600">{{ description }}</p>
+    <ul class="mt-6 uppercase tracking-wider">
+      <li class="inline list-none pr-4">
+        <a
+          class="
+            inline-block
+            py-2
+            font-semibold
+            text-xs text-gray-600
+            hover:text-black
+          "
+          href=""
+        >
+          Twitter
+        </a>
+      </li>
+
+      <li class="inline list-none pr-4">
+        <a
+          class="
+            inline-block
+            py-2
+            font-semibold
+            text-xs text-gray-600
+            hover:text-black
+          "
+          href=""
+        >
+          GitHub
+        </a>
+      </li>
+      <li class="inline list-none pr-4">
+        <a
+          class="
+            inline-block
+            py-2
+            font-semibold
+            text-xs text-gray-600
+            hover:text-black
+          "
+          href=""
+        >
+          LinkedIn
+        </a>
+      </li>
+
+      <li class="inline list-none pr-4">
+        <a
+          class="
+            inline-block
+            py-2
+            font-semibold
+            text-xs text-gray-600
+            hover:text-black
+          "
+          routerLink="/blog"
+        >
+          Blog
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
