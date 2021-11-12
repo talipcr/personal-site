@@ -1,0 +1,26 @@
+<h3
+  class="font-semibold text-gray-900 pb-1"
+  [ngClass]="{
+    'hover:underline hover:text-black': item?.link || item?.internal_link
+  }"
+>
+  <ng-template
+    [ngIf]="item?.link || item?.internal_link"
+    [ngIfElse]="elseTemplate"
+  >
+    <a *ngIf="item?.link" [href]="item?.link" target="_blank">
+      {{ item?.name }}
+    </a>
+
+    <a *ngIf="item?.internal_link" [routerLink]="item?.internal_link">
+      {{ item?.name }}
+    </a>
+  </ng-template>
+
+  <ng-template #elseTemplate>
+    {{ item?.name }}
+  </ng-template>
+</h3>
+<p class="text-md text-gray-600 font-light" appFormatItem>
+  {{ item.description }}
+</p>
