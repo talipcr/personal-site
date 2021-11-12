@@ -1,1 +1,9 @@
-<p>homepage-blog works!</p>
+<ng-template [ngIf]="postData.length" [ngIfElse]="elseTemplate">
+  <div *ngFor="let item of postData" class="mb-6">
+    <app-summary-item [item]="item"></app-summary-item>
+  </div>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <p class="text-md text-gray-600 font-light">No post yet.</p>
+</ng-template>

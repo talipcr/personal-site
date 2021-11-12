@@ -1,1 +1,9 @@
-<p>homepage-projects works!</p>
+<ng-template [ngIf]="projectsData.length" [ngIfElse]="elseTemplate">
+  <div *ngFor="let item of projectsData" class="mb-6">
+    <app-summary-item [item]="item"></app-summary-item>
+  </div>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <p class="text-md text-gray-600 font-light">No project yet.</p>
+</ng-template>

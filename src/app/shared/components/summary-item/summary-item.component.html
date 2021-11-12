@@ -8,18 +8,13 @@
     [ngIf]="item?.link || item?.internal_link"
     [ngIfElse]="elseTemplate"
   >
-    <ng-template [ngSwitch]="item.link.length > 0">
-      <a *ngSwitchCase="true">
-        <a [href]="item.link">
-          {{ item?.name }}
-        </a>
-      </a>
-      <a *ngSwitchDefault>
-        <a [routerLink]="item.internal_link">
-          {{ item?.name }}
-        </a>
-      </a>
-    </ng-template>
+    <a *ngIf="item?.link" [href]="item?.link" target="_blank">
+      {{ item?.name }}
+    </a>
+
+    <a *ngIf="item?.internal_link" [routerLink]="item?.internal_link">
+      {{ item?.name }}
+    </a>
   </ng-template>
 
   <ng-template #elseTemplate>

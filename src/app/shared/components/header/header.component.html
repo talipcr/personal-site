@@ -15,12 +15,38 @@
     </a>
   </div>
   <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20">
-    <h1 class="text-5xl text-gray-900 font-bold leading-tight hover:text-black">
-      {{ name }}
-    </h1>
+    <div
+      fxLayout="column"
+      fxLayoutAlign="space-between"
+      fxLayoutAlign="stretch"
+    >
+      <h1
+        fxFlexOrder="2"
+        class="text-5xl text-gray-900 font-bold leading-tight hover:text-black"
+      >
+        {{ name }}
+      </h1>
+      <ul fxFlexOrder="1" fxFlexAlign="end" class="uppercase tracking-wider">
+        <li *ngFor="let item of lang" class="inline list-none pr-4">
+          <a
+            class="
+              inline-block
+              py-2
+              font-semibold
+              text-xs text-gray-600
+              hover:text-black
+            "
+            [href]="item"
+            target="_blank"
+          >
+            {{ item | uppercase }}
+          </a>
+        </li>
+      </ul>
+    </div>
     <p class="text-gray-600">{{ description }}</p>
     <ul class="mt-6 uppercase tracking-wider">
-      <li class="inline list-none pr-4">
+      <li *ngFor="let item of link" class="inline list-none pr-4">
         <a
           class="
             inline-block
@@ -29,42 +55,14 @@
             text-xs text-gray-600
             hover:text-black
           "
-          href=""
+          [href]="item.href"
+          target="_blank"
         >
-          Twitter
+          {{ item.name | uppercase }}
         </a>
       </li>
 
-      <li class="inline list-none pr-4">
-        <a
-          class="
-            inline-block
-            py-2
-            font-semibold
-            text-xs text-gray-600
-            hover:text-black
-          "
-          href=""
-        >
-          GitHub
-        </a>
-      </li>
-      <li class="inline list-none pr-4">
-        <a
-          class="
-            inline-block
-            py-2
-            font-semibold
-            text-xs text-gray-600
-            hover:text-black
-          "
-          href=""
-        >
-          LinkedIn
-        </a>
-      </li>
-
-      <li class="inline list-none pr-4">
+      <!-- <li class="inline list-none pr-4">
         <a
           class="
             inline-block
@@ -77,7 +75,7 @@
         >
           Blog
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>

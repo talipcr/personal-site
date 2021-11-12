@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { skillsData } from 'src/app/shared/mock/data';
 
 @Component({
   selector: 'app-homepage-skills',
@@ -6,16 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage-skills.component.scss'],
 })
 export class HomepageSkillsComponent {
-  mockSkillData = [
-    {
-      name: 'Frontend',
-      description: ['Angular', 'React'],
-    },
-    {
-      name: 'Other',
-      description: ['Docker', 'CI/CD'],
-    },
-  ];
+  skillsData = skillsData;
 
   constructor() {}
 }

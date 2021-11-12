@@ -1,0 +1,9 @@
+<ng-template [ngIf]="certificationsData.length" [ngIfElse]="elseTemplate">
+  <div *ngFor="let item of certificationsData" class="mb-6">
+    <app-summary-item [item]="item"></app-summary-item>
+  </div>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <p class="text-md text-gray-600 font-light">No certification yet.</p>
+</ng-template>

@@ -10,7 +10,7 @@ export class FormatItemDirective implements AfterViewInit {
     this.renderer.setProperty(
       this.el.nativeElement,
       'innerHTML',
-      this.el.nativeElement.innerHTML.replace(',', ', ')
+      this.el.nativeElement.innerHTML.trim().split(',').join(', ')
     );
   }
 }

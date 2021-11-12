@@ -1,19 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   name = 'Talip Cesur';
-  description = 'test';
-
-  constructor() {}
-
-  ngOnInit(): void {
-    this.name = 'Talip Cesur';
-    this.description =
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui saepe odio aut! Maxime voluptas qui recusandae numquam voluptatibus saepe, accusantium ipsa natus totam ut esse eligendi doloremque quaerat unde perspiciatis.';
-  }
+  description = 'FullStack JavaScript Developer based in Strasbourg, France.';
+  link = [
+    {
+      name: 'twitter',
+      href: 'https://twitter.com/talip_cr',
+    },
+    {
+      name: 'github',
+      href: 'https://github.com/talipcr',
+    },
+    {
+      name: 'linkedin',
+      href: 'https://www.linkedin.com/in/talip-cesur/',
+    },
+    {
+      name: 'stackblitz',
+      href: 'https://stackblitz.com/@talipcr',
+    },
+    {
+      name: 'email',
+      href: 'mailto:talip.cesur@gmail.com',
+    },
+  ];
+  lang = ['fr', 'en', 'tr'];
 }

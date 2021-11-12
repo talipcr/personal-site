@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { projectsData } from 'src/app/shared/mock/data';
 
 @Component({
   selector: 'app-homepage-projects',
   templateUrl: './homepage-projects.component.html',
-  styleUrls: ['./homepage-projects.component.scss']
+  styleUrls: ['./homepage-projects.component.scss'],
 })
-export class HomepageProjectsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class HomepageProjectsComponent {
+  projectsData = projectsData;
 }

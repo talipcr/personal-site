@@ -1,3 +1,9 @@
-<div *ngFor="let item of mockSkillData" class="mb-6">
-  <app-summary-item [item]="item"></app-summary-item>
-</div>
+<ng-template [ngIf]="skillsData.length" [ngIfElse]="elseTemplate">
+  <div *ngFor="let item of skillsData" class="mb-6">
+    <app-summary-item [item]="item"></app-summary-item>
+  </div>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <p class="text-md text-gray-600 font-light">No skill yet.</p>
+</ng-template>
