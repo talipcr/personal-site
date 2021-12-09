@@ -30,15 +30,20 @@ export const experienceData = [
   },
   {
     name: 'La Région Bretagne',
-    description: 'Front-End Developer, October 2012 - August 2017',
+    description: 'Front-End Developer, October 2014 - August 2015',
     link: 'https://www.bretagne.bzh/',
   },
 ];
 
 export const certificationsData = [
   {
+    name: 'Angular Level 3 Certification',
+    description: 'Angular Training, October 2021 - ID 2K18DHS',
+    link: 'https://www.angulartraining.com/certification/check.html',
+  },
+  {
     name: 'Angular Level 2 Certification',
-    description: 'Angular Training, October 2021 - ID 2J20CGK',
+    description: 'Angular Training, November 2021 - ID 2J20CGK',
     link: 'https://www.angulartraining.com/certification/check.html',
   },
 ];
