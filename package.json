@@ -10,7 +10,11 @@
     "deploy": "ng build && firebase deploy --only hosting",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:ssr": "ng run personal-site:serve-ssr",
+    "serve:ssr": "node dist/personal-site/server/main.js",
+    "build:ssr": "ng build && ng run personal-site:server",
+    "prerender": "ng run personal-site:prerender"
   },
   "private": true,
   "dependencies": {
@@ -23,10 +27,13 @@
     "@angular/forms": "^13.0.1",
     "@angular/platform-browser": "^13.0.1",
     "@angular/platform-browser-dynamic": "^13.0.1",
+    "@angular/platform-server": "^13.0.1",
     "@angular/router": "^13.0.1",
+    "@nguniversal/express-engine": "^13.0.1",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "@tailwindcss/typography": "^0.4.1",
+    "express": "^4.15.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -40,6 +47,8 @@
     "@angular-eslint/template-parser": "13.0.1",
     "@angular/cli": "^13.0.2",
     "@angular/compiler-cli": "^13.0.1",
+    "@nguniversal/builders": "^13.0.1",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
