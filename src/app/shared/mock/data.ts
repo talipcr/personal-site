@@ -1,4 +1,27 @@
-export const projectsData = [];
+export const projectsData = [
+  {
+    name: 'Auto Clean de la Meinau',
+    description: 'A virtual showroom plateform for the Auto Clean de la Meinau',
+    link: 'https://www.autocleandelameinau.fr/',
+  },
+  {
+    name: 'Ng Wheather App',
+    description:
+      'A weather app made with Angular for the certification Level 2 & 3 of Angular Training',
+    link: 'https://github.com/talipcr/ng-weather-app',
+  },
+  {
+    name: 'Node Course Udemy',
+    description:
+      'A repo for the Node.js course on Udemy.com. It contains the code for the Node.js course.',
+    link: 'https://github.com/talipcr/node-course',
+  },
+  {
+    name: 'Personal Site',
+    description: 'A personal site for my portfolio',
+    link: 'https://github.com/talipcr/personal-site',
+  },
+];
 
 export const postData = [];
 

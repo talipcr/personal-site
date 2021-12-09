@@ -1,6 +1,6 @@
 {
   "name": "personal-site",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "My personal site built using Angular 13",
   "author": "Talip Cesur",
   "scripts": {
