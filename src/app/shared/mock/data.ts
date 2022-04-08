@@ -32,6 +32,16 @@ export const experienceData = [
     link: 'https://www.sfeir.com/',
   },
   {
+    name: 'Proximis',
+    description: 'Front-End Developer, March 2022 - Present',
+    link: 'https://www.proximis.com/',
+  },
+  {
+    name: 'Stellantis',
+    description: 'Lead Front-End Developer, November 2021 - March 2022',
+    link: 'https://www.stellantis.com/fr',
+  },
+  {
     name: 'Crésus',
     description: 'Software Engineer Web Developer, July 2019 - May 2021',
     link: 'https://www.bgvapp.com/',
