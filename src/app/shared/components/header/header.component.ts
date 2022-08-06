@@ -10,10 +10,6 @@ export class HeaderComponent {
   description = 'FullStack JavaScript Developer based in Strasbourg, France.';
   link = [
     {
-      name: 'twitter',
-      href: 'https://twitter.com/talip_cr',
-    },
-    {
       name: 'github',
       href: 'https://github.com/talipcr',
     },

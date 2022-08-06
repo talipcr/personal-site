@@ -71,12 +71,12 @@ export const experienceData = [
 export const certificationsData = [
   {
     name: 'Angular Level 3 Certification',
-    description: 'Angular Training, October 2021 - ID 2K18DHS',
+    description: 'Angular Training, November 2021 - ID 2K18DHS',
     link: 'https://www.angulartraining.com/certification/check.html',
   },
   {
     name: 'Angular Level 2 Certification',
-    description: 'Angular Training, November 2021 - ID 2J20CGK',
+    description: 'Angular Training, October 2021 - ID 2J20CGK',
     link: 'https://www.angulartraining.com/certification/check.html',
   },
 ];
@@ -92,6 +92,7 @@ export const skillsData = [
       'Angular',
       'React',
       'Vue',
+      'Nuxt',
       'Node.js',
       'Express.js',
       'NestJS',
