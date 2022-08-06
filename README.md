@@ -1,1 +1,1 @@
-Repo containing my personal site built using Angular 13. Currently WIP.
+Repo containing my personal site built using Angular 14. Currently WIP.
