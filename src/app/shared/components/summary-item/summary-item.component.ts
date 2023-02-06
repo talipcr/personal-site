@@ -24,9 +24,7 @@ export class SummaryItemComponent {
     const years = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 30) / 12);
 
     return Math.round(years) > 0 && Math.round(diffInMonths) > 0
-      ? `${Math.round(years)} years ${Math.round(
-          diffInMonths
-        )} months ${Math.round(diffInMs / (1000 * 60 * 60 * 24 * 30))}`
+      ? `${Math.round(years)} years ${Math.round(diffInMonths)} months`
       : Math.round(years) > 0
       ? `${Math.round(years)} years`
       : `${Math.round(diffInMonths)} months`;
