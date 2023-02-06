@@ -15,7 +15,7 @@ export class HeaderComponent {
     },
     {
       name: 'linkedin',
-      href: 'https://www.linkedin.com/in/talip-cesur/',
+      href: 'https://www.linkedin.com/in/talipcesur/',
     },
     {
       name: 'stackblitz',

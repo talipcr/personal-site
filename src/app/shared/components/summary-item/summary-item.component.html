@@ -22,5 +22,8 @@
   </ng-template>
 </h3>
 <p class="text-md text-gray-600 font-light" appFormatItem>
-  {{ item.description }}
+  {{ item.description
+  }}<span *ngIf="type === 'experience'"
+    >&nbsp;({{ calculateDiff(item?.startDate, item?.endDate) }})
+  </span>
 </p>

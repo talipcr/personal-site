@@ -1,6 +1,6 @@
 <ng-template [ngIf]="experienceData.length" [ngIfElse]="elseTemplate">
   <div *ngFor="let item of experienceData" class="mb-6">
-    <app-summary-item [item]="item"></app-summary-item>
+    <app-summary-item [item]="item" [type]="'experience'"></app-summary-item>
   </div>
 </ng-template>
 
