@@ -23,7 +23,11 @@ export const projectsData = [
   },
 ];
 
-export const postData = [];
+export const postData = [{
+  name: 'Utiliser Cypress et Cucumber pour des tests automatisés efficaces',
+  description: 'Des tests automatisés sont cruciaux pour assurer la qualité de votre site. Mais rédiger des scénarios clairs et faciles à entretenir peut être difficile. Heureusement, Cypress et Cucumber sont là pour simplifier le processus.',
+  link: 'https://www.sfeir.dev/front/utiliser-cypress-et-cucumber-pour-des-tests-automatises-efficaces/',
+}];
 
 export const experienceData = [
   {
@@ -41,10 +45,17 @@ export const experienceData = [
     endDate: new Date(2022, 10, 31),
   },
   {
+    name: 'Sidel',
+    description: 'FullStack Developer, March 2023 - Present',
+    link: 'https://www.sidel.com/',
+    startDate: new Date(2023, 3),
+  },
+  {
     name: 'Proximis',
-    description: 'Front-End Developer, March 2022 - Present',
+    description: 'Front-End Developer, March 2022 - March 2023',
     link: 'https://www.proximis.com/',
     startDate: new Date(2022, 3),
+    endDate: new Date(2023, 3, 30),
   },
   {
     name: 'Stellantis',

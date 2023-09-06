@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SummaryItemComponent {
   @Input() item: any;
+  @Input() sameCompany : boolean = false;
   @Input() type: any;
 
   public today: Date = new Date();

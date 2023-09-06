@@ -8,6 +8,4 @@ import { skillsData } from 'src/app/shared/mock/data';
 })
 export class HomepageSkillsComponent {
   skillsData = skillsData;
-
-  constructor() {}
 }

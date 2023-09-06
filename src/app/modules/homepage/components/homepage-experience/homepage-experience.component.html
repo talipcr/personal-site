@@ -1,6 +1,7 @@
 <ng-template [ngIf]="experienceData.length" [ngIfElse]="elseTemplate">
-  <div *ngFor="let item of experienceData" class="mb-6">
-    <app-summary-item [item]="item" [type]="'experience'"></app-summary-item>
+  <div *ngFor="let item of experienceData; let i = index" [ngClass]="{'mb-6': i < experienceData.length - 1 ? experienceData[i+1].name !== item?.name :true}"
+  >
+    <app-summary-item [item]="item" [sameCompany]="i>0 ? experienceData[i-1].name === item?.name : false" [type]="'experience'"></app-summary-item>
   </div>
 </ng-template>
 

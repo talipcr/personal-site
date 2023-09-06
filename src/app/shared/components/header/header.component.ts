@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   name = 'Talip Cesur';
-  description = 'FullStack JavaScript Developer based in Strasbourg, France.';
+  description = 'Engineering Manager & Lead Full-stack Developer based in Strasbourg, France.';
   link = [
     {
       name: 'github',
