@@ -1,0 +1,72 @@
+{
+  "HEADER": {
+    "DESCRIPTION": "Senior Software Engineer & AI Engineer basé à Genève, Suisse.",
+    "TITLE": "Senior Software Engineer & AI Engineer",
+    "META": "ans · Genève · SQLI",
+    "NAV": "Navigation principale",
+    "MENU": "Menu"
+  },
+  "HOME": {
+    "ABOUT": "À propos",
+    "PROJECTS": "Projets",
+    "POSTS": "Derniers articles",
+    "EXPERIENCE": "Expérience",
+    "CERTIFICATIONS": "Certifications",
+    "EDUCATION": "Formation",
+    "SKILLS": "Compétences"
+  },
+  "ABOUT": {
+    "TEXT": "Senior Software Engineer avec plus de 10 ans d'expérience, spécialisé TypeScript (Angular, Vue) et .NET, je travaille en mode agentique avec l'IA au quotidien. À {{age}} ans, je suis actuellement Senior Full-Stack Engineer chez SQLI à Genève, en mission pour SGS sur une plateforme de gestion de la certification : intégration d'un assistant IA, planification des audits, microservices .NET et migration vers Angular 19. Avant ça, 6 ans chez SFEIR : Lead Full-stack sur une plateforme IoT industrielle pour SIDEL, Lead Full-Stack Angular/Java pour Stellantis, Lead Front-End Vue/Nuxt pour PROXIMIS, et Engineering Manager d'une équipe de 13 développeurs. Mon approche : l'IA propose, l'ingénieur valide — qualité, tests et sécurité avant tout."
+  },
+  "EMPTY": {
+    "POST": "Aucun article pour le moment.",
+    "PROJECT": "Aucun projet pour le moment.",
+    "EXPERIENCE": "Aucune expérience pour le moment.",
+    "CERTIFICATION": "Aucune certification pour le moment.",
+    "EDUCATION": "Aucune formation pour le moment.",
+    "SKILL": "Aucune compétence pour le moment."
+  },
+  "DURATION": {
+    "YEAR": "an",
+    "YEARS": "ans",
+    "MONTH": "mois",
+    "MONTHS": "mois"
+  },
+  "PROJECTS": {
+    "PANDAKEEP": "Application de notes Markdown desktop 100 % locale pour Windows (ex-Pensly) : aucun compte, aucun serveur. Miroir Markdown, recherche full-text, wikilinks et backlinks, chiffrement par note, mises à jour automatiques et autocomplétion IA locale (Ollama) ou cloud (Gemini, OpenAI, Mistral). Stack : Tauri 2, Rust, Vue 3, TypeScript, SQLite, Vitest",
+    "CINECIRCLE": "Application sociale films et séries : créer des groupes, swiper des films, matcher avec ses amis et obtenir un choix de film selon les goûts de chacun. Disponible en français et en anglais. Stack : Flutter, Riverpod, Firebase, TMDB API",
+    "COPILOT_SWITCHER": "Extension VS Code pour basculer entre comptes GitHub pour GitHub Copilot, sans quitter l'éditeur. Stack : TypeScript, VS Code Extension API"
+  },
+  "EXPERIENCE": {
+    "SQLI": "Senior Software Engineer, octobre 2024 - Aujourd'hui",
+    "SGS": "Senior Full-Stack Engineer (Angular · Vue · .NET · Azure), octobre 2024 - Aujourd'hui",
+    "SFEIR_EM": "Engineering Manager & Développeur Full-stack, octobre 2022 - octobre 2024",
+    "SFEIR_ENGINEER": "Ingénieur d'études et développements, octobre 2018 - octobre 2022",
+    "SIDEL": "Lead Développeur Full-stack, mars 2023 - octobre 2024",
+    "PROXIMIS": "Lead Dev Front-End Vue, mars 2022 - mars 2023",
+    "STELLANTIS": "Lead Développeur Full-Stack (Angular / Java), novembre 2021 - mars 2022",
+    "CRESUS": "Développeur Front-End, juillet 2019 - mai 2021",
+    "DYNASYS": "Développeur Front-End, octobre 2018 - juin 2019",
+    "JOHN_STEEL": "Développeur Front-End, septembre 2017 - octobre 2018",
+    "MATIERE_GRISE": "Intégrateur Web, avril 2016 - août 2017",
+    "BRETAGNE": "Apprenti webmaster, octobre 2014 - août 2015"
+  },
+  "CERTIFICATIONS": {
+    "VUE": "Académie Vue, octobre 2022 - ID 6622370",
+    "ANGULAR_3": "Angular Training, novembre 2021 - ID 2K18DHS",
+    "ANGULAR_2": "Angular Training, octobre 2021 - ID 2J20CGK"
+  },
+  "EDUCATION": {
+    "IUT_VANNES": "Licence Professionnelle, S2IMa (Systèmes d'Information - Intégration et Maintenance applicative), 2014 - 2015",
+    "UBS": "Licence, Mathématiques-Informatique-Statistiques, 2013 - 2014",
+    "BTS": "BTS SIO, Solutions Logicielles et Applications Métiers (développement), 2011 - 2013",
+    "BAC": "Baccalauréat STG, GSI (Gestion des Systèmes d'Informations), 2010 - 2011"
+  },
+  "SKILLS": {
+    "LANGUAGES": "Langages",
+    "FRONTEND": "Frontend",
+    "BACKEND_CLOUD": "Backend & Cloud",
+    "AI_AGENTS": "IA & Agents",
+    "QUALITY": "Qualité & DevOps"
+  }
+}

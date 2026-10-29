@@ -1,10 +1,3 @@
-<p class="text-md text-gray-600 font-light">
-  As a seasoned FullStack JavaScript Developer, I bring experience in building
-  and scaling web applications across a range of domains. At
-  {{ calculateAge(birthday) }}, I am a driven and motivated individual who is
-  passionate about using technology for good. Living on the outskirts of
-  Strasbourg, France, I am dedicated to making open-source contributions,
-  working in high-impact environments, and helping development teams succeed. My
-  vision for the future is optimistic and filled with endless potential, thanks
-  to the power of IT.
+<p class="about-text">
+  {{ 'ABOUT.TEXT' | translate: { age: calculateAge(birthday) } }}
 </p>

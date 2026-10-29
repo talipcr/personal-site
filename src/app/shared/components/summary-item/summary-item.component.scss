@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  padding: 20px 24px;
+}
+
+.summary-title {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.summary-continued {
+  margin-bottom: 4px;
+  color: var(--text-muted);
+}
+
+.summary-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.summary-duration {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.8125rem;
+  color: var(--accent-1);
+}
+
+.summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

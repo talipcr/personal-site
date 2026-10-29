@@ -1,0 +1,61 @@
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+// Vertical connection line: faint track + gradient fill driven by scroll
+.timeline-track {
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--surface-border);
+}
+
+.timeline-fill {
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.timeline-item {
+  position: relative;
+  margin-top: 24px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &.is-continued {
+    margin-top: 12px;
+  }
+}
+
+// Node lights up (opacity + scale) when the fill reaches it
+.timeline-node {
+  position: absolute;
+  left: -30px;
+  top: 26px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--node);
+  box-shadow: 0 0 0 4px var(--bg-0), 0 0 16px var(--node);
+  opacity: 0.35;
+  transform: scale(0.6);
+
+  .is-continued & {
+    left: -28px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-2);
+    box-shadow: 0 0 0 4px var(--bg-0), 0 0 12px var(--accent-2);
+  }
+
+  &.is-lit {
+    opacity: 1;
+    transform: none;
+  }
+}

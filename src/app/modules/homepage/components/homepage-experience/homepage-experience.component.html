@@ -1,10 +1,22 @@
 <ng-template [ngIf]="experienceData.length" [ngIfElse]="elseTemplate">
-  <div *ngFor="let item of experienceData; let i = index" [ngClass]="{'mb-6': i < experienceData.length - 1 ? experienceData[i+1].name !== item?.name :true}"
-  >
-    <app-summary-item [item]="item" [sameCompany]="i>0 ? experienceData[i-1].name === item?.name : false" [type]="'experience'"></app-summary-item>
+  <div #timeline class="timeline">
+    <div class="timeline-track" aria-hidden="true">
+      <div #fill class="timeline-fill"></div>
+    </div>
+    <ol>
+      <li
+        *ngFor="let item of experienceData; let i = index"
+        class="timeline-item"
+        [class.is-continued]="i > 0 && experienceData[i - 1].name === item?.name"
+        appReveal
+      >
+        <span class="timeline-node" aria-hidden="true"></span>
+        <app-summary-item appTilt class="card" [item]="item" [sameCompany]="i>0 ? experienceData[i-1].name === item?.name : false" [type]="'experience'"></app-summary-item>
+      </li>
+    </ol>
   </div>
 </ng-template>
 
 <ng-template #elseTemplate>
-  <p class="text-md text-gray-600 font-light">No experience yet.</p>
+  <p class="text-muted">{{ 'EMPTY.EXPERIENCE' | translate }}</p>
 </ng-template>

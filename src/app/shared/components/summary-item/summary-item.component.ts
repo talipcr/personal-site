@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-summary-item',
@@ -12,6 +13,12 @@ export class SummaryItemComponent {
 
   public today: Date = new Date();
 
+  constructor(private translate: TranslateService) {}
+
+  public isList(value: unknown): value is string[] {
+    return Array.isArray(value);
+  }
+
   public calculateDiff(startDate: Date, endDate: Date): string {
     const start = new Date(startDate.getFullYear(), startDate.getMonth() - 1);
     const end = endDate
@@ -24,10 +31,17 @@ export class SummaryItemComponent {
     );
     const years = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 30) / 12);
 
-    return Math.round(years) > 0 && Math.round(diffInMonths) > 0
-      ? `${Math.round(years)} years ${Math.round(diffInMonths)} months`
-      : Math.round(years) > 0
-      ? `${Math.round(years)} years`
-      : `${Math.round(diffInMonths)} months`;
+    const yearsLabel = `${years} ${this.translate.instant(
+      years > 1 ? 'DURATION.YEARS' : 'DURATION.YEAR'
+    )}`;
+    const monthsLabel = `${diffInMonths} ${this.translate.instant(
+      diffInMonths > 1 ? 'DURATION.MONTHS' : 'DURATION.MONTH'
+    )}`;
+
+    return years > 0 && diffInMonths > 0
+      ? `${yearsLabel} ${monthsLabel}`
+      : years > 0
+      ? yearsLabel
+      : monthsLabel;
   }
 }

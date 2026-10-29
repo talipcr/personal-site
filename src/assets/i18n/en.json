@@ -1,0 +1,72 @@
+{
+  "HEADER": {
+    "DESCRIPTION": "Senior Software Engineer & AI Engineer based in Geneva, Switzerland.",
+    "TITLE": "Senior Software Engineer & AI Engineer",
+    "META": "years · Geneva · SQLI",
+    "NAV": "Main navigation",
+    "MENU": "Menu"
+  },
+  "HOME": {
+    "ABOUT": "About me",
+    "PROJECTS": "Projects",
+    "POSTS": "Latest Posts",
+    "EXPERIENCE": "Experience",
+    "CERTIFICATIONS": "Certifications",
+    "EDUCATION": "Education",
+    "SKILLS": "Skills"
+  },
+  "ABOUT": {
+    "TEXT": "Senior Software Engineer with over 10 years of experience, specialized in TypeScript (Angular, Vue) and .NET, working in an agentic way with AI every day. At {{age}}, I am currently a Senior Full-Stack Engineer at SQLI in Geneva, on assignment for SGS on a certification management platform: AI assistant integration, audit planning, .NET microservices and migration to Angular 19. Before that, I spent 6 years at SFEIR as Lead Full-stack on an industrial IoT platform for SIDEL, Lead Full-Stack Angular/Java for Stellantis, Lead Front-End Vue/Nuxt for PROXIMIS, and Engineering Manager of a team of 13 developers. My approach: AI proposes, the engineer validates — quality, tests and security first."
+  },
+  "EMPTY": {
+    "POST": "No post yet.",
+    "PROJECT": "No project yet.",
+    "EXPERIENCE": "No experience yet.",
+    "CERTIFICATION": "No certification yet.",
+    "EDUCATION": "No education yet.",
+    "SKILL": "No skill yet."
+  },
+  "DURATION": {
+    "YEAR": "year",
+    "YEARS": "years",
+    "MONTH": "month",
+    "MONTHS": "months"
+  },
+  "PROJECTS": {
+    "PANDAKEEP": "A 100% local Markdown notes desktop app for Windows (formerly Pensly): no account, no server. Markdown mirror, full-text search, wikilinks and backlinks, per-note encryption, auto-updates, and AI autocompletion, local (Ollama) or cloud (Gemini, OpenAI, Mistral). Stack: Tauri 2, Rust, Vue 3, TypeScript, SQLite, Vitest",
+    "CINECIRCLE": "A social movie and series app: create groups, swipe on movies, match with friends and get a movie night pick based on everyone's taste. Available in French and English. Stack: Flutter, Riverpod, Firebase, TMDB API",
+    "COPILOT_SWITCHER": "A VS Code extension to switch between GitHub accounts for GitHub Copilot, without leaving the editor. Stack: TypeScript, VS Code Extension API"
+  },
+  "EXPERIENCE": {
+    "SQLI": "Senior Software Engineer, October 2024 - Present",
+    "SGS": "Senior Full-Stack Engineer (Angular · Vue · .NET · Azure), October 2024 - Present",
+    "SFEIR_EM": "Engineering Manager & Full-stack Developer, October 2022 - October 2024",
+    "SFEIR_ENGINEER": "Software Engineer, October 2018 - October 2022",
+    "SIDEL": "Lead Full-stack Developer, March 2023 - October 2024",
+    "PROXIMIS": "Lead Front-End Vue Developer, March 2022 - March 2023",
+    "STELLANTIS": "Lead Full-Stack Developer (Angular / Java), November 2021 - March 2022",
+    "CRESUS": "Front-End Developer, July 2019 - May 2021",
+    "DYNASYS": "Front-End Developer, October 2018 - June 2019",
+    "JOHN_STEEL": "Front-End Developer, September 2017 - October 2018",
+    "MATIERE_GRISE": "Web Integrator, April 2016 - August 2017",
+    "BRETAGNE": "Apprentice Webmaster, October 2014 - August 2015"
+  },
+  "CERTIFICATIONS": {
+    "VUE": "Académie Vue, October 2022 - ID 6622370",
+    "ANGULAR_3": "Angular Training, November 2021 - ID 2K18DHS",
+    "ANGULAR_2": "Angular Training, October 2021 - ID 2J20CGK"
+  },
+  "EDUCATION": {
+    "IUT_VANNES": "Professional Bachelor's degree, S2IMa (Information Systems - Application Integration and Maintenance), 2014 - 2015",
+    "UBS": "Bachelor's degree, Mathematics-Computer Science-Statistics, 2013 - 2014",
+    "BTS": "BTS SIO, Software Solutions and Business Applications (development), 2011 - 2013",
+    "BAC": "Baccalauréat STG, Information Systems Management, 2010 - 2011"
+  },
+  "SKILLS": {
+    "LANGUAGES": "Languages",
+    "FRONTEND": "Frontend",
+    "BACKEND_CLOUD": "Backend & Cloud",
+    "AI_AGENTS": "AI & Agents",
+    "QUALITY": "Quality & DevOps"
+  }
+}

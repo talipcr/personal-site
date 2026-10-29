@@ -1,9 +1,11 @@
 <ng-template [ngIf]="certificationsData.length" [ngIfElse]="elseTemplate">
-  <div *ngFor="let item of certificationsData" class="mb-6">
-    <app-summary-item [item]="item"></app-summary-item>
+  <div class="card-grid">
+    <div *ngFor="let item of certificationsData; let i = index" [appReveal]="i">
+      <app-summary-item appTilt class="card h-full" [item]="item"></app-summary-item>
+    </div>
   </div>
 </ng-template>
 
 <ng-template #elseTemplate>
-  <p class="text-md text-gray-600 font-light">No certification yet.</p>
+  <p class="text-muted">{{ 'EMPTY.CERTIFICATION' | translate }}</p>
 </ng-template>

@@ -1,9 +1,11 @@
 <ng-template [ngIf]="skillsData.length" [ngIfElse]="elseTemplate">
-  <div *ngFor="let item of skillsData" class="mb-6">
-    <app-summary-item [item]="item"></app-summary-item>
+  <div class="card-grid">
+    <div *ngFor="let item of skillsData; let i = index" [appReveal]="i">
+      <app-summary-item appTilt class="card h-full" [item]="item"></app-summary-item>
+    </div>
   </div>
 </ng-template>
 
 <ng-template #elseTemplate>
-  <p class="text-md text-gray-600 font-light">No skill yet.</p>
+  <p class="text-muted">{{ 'EMPTY.SKILL' | translate }}</p>
 </ng-template>

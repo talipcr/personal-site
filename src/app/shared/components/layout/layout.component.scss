@@ -1,0 +1,11 @@
+// app-root is a flex container: allow shrinking below content min width
+:host {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+// clip (not hidden): stops horizontal overflow without breaking the sticky nav
+.layout {
+  overflow-x: clip;
+}

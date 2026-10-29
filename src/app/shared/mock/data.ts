@@ -1,25 +1,18 @@
 export const projectsData = [
   {
-    name: 'Auto Clean de la Meinau',
-    description: 'A virtual showroom plateform for the Auto Clean de la Meinau',
-    link: 'https://www.autocleandelameinau.fr/',
+    name: 'PandaKeep',
+    description: 'PROJECTS.PANDAKEEP',
+    link: 'https://github.com/talipcr/pandakeep-releases/releases',
   },
   {
-    name: 'Ng Wheather App',
-    description:
-      'A weather app made with Angular for the certification Level 2 & 3 of Angular Training',
-    link: 'https://github.com/talipcr/ng-weather-app',
+    name: 'CineCircle',
+    description: 'PROJECTS.CINECIRCLE',
+    link: 'https://github.com/talipcr/CineCircle-Release/releases/latest',
   },
   {
-    name: 'Node Course Udemy',
-    description:
-      'A repo for the Node.js course on Udemy.com. It contains the code for the Node.js course.',
-    link: 'https://github.com/talipcr/node-course',
-  },
-  {
-    name: 'Personal Site',
-    description: 'A personal site for my portfolio',
-    link: 'https://github.com/talipcr/personal-site',
+    name: 'Copilot Account Switcher',
+    description: 'PROJECTS.COPILOT_SWITCHER',
+    link: 'https://github.com/talipcr/copilot-account-switcher',
   },
 ];
 
@@ -31,125 +24,170 @@ export const postData = [{
 
 export const experienceData = [
   {
-    name: 'SFEIR',
-    description:
-      'Engineering Manager & Front-end Developer, October 2022 - Present',
-    link: 'https://www.sfeir.com/',
-    startDate: new Date(2022, 10),
+    name: 'SQLI',
+    description: 'EXPERIENCE.SQLI',
+    link: 'https://www.sqli.com/',
+    startDate: new Date(2024, 10),
+  },
+  {
+    name: 'SGS',
+    description: 'EXPERIENCE.SGS',
+    link: 'https://www.sgs.com/',
+    startDate: new Date(2024, 10),
   },
   {
     name: 'SFEIR',
-    description: 'Software Engineer Web Developer, October 2018 - October 2022',
+    description: 'EXPERIENCE.SFEIR_EM',
+    link: 'https://www.sfeir.com/',
+    startDate: new Date(2022, 10),
+    endDate: new Date(2024, 10),
+  },
+  {
+    name: 'SFEIR',
+    description: 'EXPERIENCE.SFEIR_ENGINEER',
     link: 'https://www.sfeir.com/',
     startDate: new Date(2018, 10),
-    endDate: new Date(2022, 10, 31),
+    endDate: new Date(2022, 10),
   },
   {
     name: 'Sidel',
-    description: 'FullStack Developer, March 2023 - Present',
+    description: 'EXPERIENCE.SIDEL',
     link: 'https://www.sidel.com/',
     startDate: new Date(2023, 3),
+    endDate: new Date(2024, 10),
   },
   {
     name: 'Proximis',
-    description: 'Front-End Developer, March 2022 - March 2023',
+    description: 'EXPERIENCE.PROXIMIS',
     link: 'https://www.proximis.com/',
     startDate: new Date(2022, 3),
-    endDate: new Date(2023, 3, 30),
+    endDate: new Date(2023, 3),
   },
   {
     name: 'Stellantis',
-    description: 'Lead Front-End Developer, November 2021 - March 2022',
+    description: 'EXPERIENCE.STELLANTIS',
     link: 'https://www.stellantis.com/fr',
     startDate: new Date(2021, 11),
-    endDate: new Date(2022, 3, 30),
+    endDate: new Date(2022, 3),
   },
   {
     name: 'Crésus',
-    description: 'Software Engineer Web Developer, July 2019 - May 2021',
+    description: 'EXPERIENCE.CRESUS',
     link: 'https://www.bgvapp.com/',
     startDate: new Date(2019, 7),
-    endDate: new Date(2021, 5, 30),
+    endDate: new Date(2021, 5),
   },
   {
-    name: 'Dynasys',
-    description: 'Software Engineer Web Developer, October 2018 - June 2019',
+    name: 'QAD DynaSys',
+    description: 'EXPERIENCE.DYNASYS',
     link: 'https://www.dys.com/',
     startDate: new Date(2018, 10),
-    endDate: new Date(2019, 6, 31),
+    endDate: new Date(2019, 6),
   },
   {
     name: 'John Steel',
-    description: 'Front-End Developer, September 2017 - October 2018',
+    description: 'EXPERIENCE.JOHN_STEEL',
     link: 'https://www.john-steel.com/',
     startDate: new Date(2017, 9),
-    endDate: new Date(2018, 10, 31),
+    endDate: new Date(2018, 10),
   },
   {
     name: 'Matière Grise',
-    description: 'Front-End Developer, April 2016 - August 2017',
+    description: 'EXPERIENCE.MATIERE_GRISE',
     link: 'https://matiere-grise.fr/',
     startDate: new Date(2016, 4),
-    endDate: new Date(2017, 8, 31),
+    endDate: new Date(2017, 8),
   },
   {
-    name: 'La Région Bretagne',
-    description: 'Front-End Developer, October 2014 - August 2015',
+    name: 'Conseil régional de Bretagne',
+    description: 'EXPERIENCE.BRETAGNE',
     link: 'https://www.bretagne.bzh/',
     startDate: new Date(2014, 10),
-    endDate: new Date(2015, 8, 31),
+    endDate: new Date(2015, 8),
   },
 ];
 
 export const certificationsData = [
   {
     name: 'Certified Vue Developer',
-    description: 'Académie Vue, October 2022 - ID 6622370',
+    description: 'CERTIFICATIONS.VUE',
     link: 'https://api.badgr.io/public/assertions/ZBTWsBbTS5yVaeJN5LL3mQ?identity__email=cesur.t%40sfeir.com',
   },
   {
     name: 'Angular Level 3 Certification',
-    description: 'Angular Training, November 2021 - ID 2K18DHS',
+    description: 'CERTIFICATIONS.ANGULAR_3',
     link: 'https://www.angulartraining.com/certification/check.html',
   },
   {
     name: 'Angular Level 2 Certification',
-    description: 'Angular Training, October 2021 - ID 2J20CGK',
+    description: 'CERTIFICATIONS.ANGULAR_2',
     link: 'https://www.angulartraining.com/certification/check.html',
+  },
+];
+
+export const educationData = [
+  {
+    name: 'IUT de Vannes',
+    description: 'EDUCATION.IUT_VANNES',
+  },
+  {
+    name: 'Université de Bretagne-Sud',
+    description: 'EDUCATION.UBS',
+  },
+  {
+    name: 'Lycée Camille Sée',
+    description: 'EDUCATION.BTS',
+  },
+  {
+    name: 'Lycée Camille Sée',
+    description: 'EDUCATION.BAC',
   },
 ];
 
 export const skillsData = [
   {
-    name: 'Languages',
-    description: ['TypeScript', 'JavaScript (ES6+)', 'PHP'],
+    name: 'SKILLS.LANGUAGES',
+    description: ['TypeScript', 'JavaScript (ES6+)', 'C#', 'Java'],
   },
   {
-    name: 'Frameworks',
+    name: 'SKILLS.FRONTEND',
     description: [
-      'Angular',
-      'React',
-      'Vue',
+      'Angular (Signals, SSR, NgRx/NGXS, RxJS)',
+      'Vue.js',
       'Nuxt',
-      'Node.js',
-      'Express.js',
-      'NestJS',
-      'Symphony',
     ],
   },
   {
-    name: 'Databases',
-    description: ['MongoDB', 'MySQL', 'SQLite'],
+    name: 'SKILLS.BACKEND_CLOUD',
+    description: [
+      '.NET',
+      'Java / Spring Boot',
+      'Node.js',
+      'NestJS',
+      'Microsoft Azure',
+      'Google Cloud Platform (GCP)',
+      'Firebase',
+    ],
   },
   {
-    name: 'Other',
+    name: 'SKILLS.AI_AGENTS',
     description: [
+      'LLM',
+      'Claude Code',
+      'MCP',
+      'Ollama',
+      'OpenAI',
+      'Gemini',
+      'Mistral',
+    ],
+  },
+  {
+    name: 'SKILLS.QUALITY',
+    description: [
+      'Cypress',
+      'Vitest',
+      'CI/CD (GitLab, GitHub Actions)',
       'Docker',
-      'Firebase',
-      'Google Cloud Platform (GCP)',
-      'CI/CD',
-      'Microservices',
-      'API Design',
       'Agile Scrum',
     ],
   },
