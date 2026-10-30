@@ -1,6 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, Input, NgZone, OnDestroy } from '@angular/core';
 import { inView } from 'motion';
-import { enter, fadeUp } from '../motion/motion.tokens';
+import { enter, fadeUp, isBrowser } from '../motion/motion.tokens';
 
 // fadeUp when 30% of the element is in view (once). Value = stagger index.
 @Directive({
@@ -14,6 +14,8 @@ export class RevealDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef<HTMLElement>, private zone: NgZone) {}
 
   ngAfterViewInit(): void {
+    // Prerendered HTML must stay visible: nothing is hidden server-side
+    if (!isBrowser) return;
     const el = this.el.nativeElement;
     const delay = Math.min(Number(this.appReveal) || 0, 5) * 0.08;
 

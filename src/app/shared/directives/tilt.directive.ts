@@ -1,6 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, NgZone, OnDestroy, Renderer2 } from '@angular/core';
 import { animate, hover, press } from 'motion';
-import { canHover, duration, prefersReducedMotion, springUi } from '../motion/motion.tokens';
+import { canHover, duration, isBrowser, prefersReducedMotion, springUi } from '../motion/motion.tokens';
 
 const MAX_TILT = 4; // degrees
 
@@ -18,7 +18,7 @@ export class TiltDirective implements AfterViewInit, OnDestroy {
   ) {}
 
   ngAfterViewInit(): void {
-    if (!canHover() || prefersReducedMotion()) return;
+    if (!isBrowser || !canHover() || prefersReducedMotion()) return;
 
     const card = this.el.nativeElement;
     const glow: HTMLElement = this.renderer.createElement('span');

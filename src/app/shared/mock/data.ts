@@ -22,88 +22,143 @@ export const postData = [{
   link: 'https://www.sfeir.dev/front/utiliser-cypress-et-cucumber-pour-des-tests-automatises-efficaces/',
 }];
 
-export const experienceData = [
+// Months are 1-based here (October = 10); positions may be roles or client missions
+interface Position {
+  client?: string;
+  link?: string;
+  description: string;
+  details: string;
+  startDate: Date;
+  endDate?: Date;
+}
+
+export const experienceData: {
+  name: string;
+  link: string;
+  startDate: Date;
+  endDate?: Date;
+  positions: Position[];
+}[] = [
   {
     name: 'SQLI',
-    description: 'EXPERIENCE.SQLI',
     link: 'https://www.sqli.com/',
     startDate: new Date(2024, 10),
-  },
-  {
-    name: 'SGS',
-    description: 'EXPERIENCE.SGS',
-    link: 'https://www.sgs.com/',
-    startDate: new Date(2024, 10),
+    positions: [
+      {
+        description: 'EXPERIENCE.SQLI',
+        details: 'EXPERIENCE_DETAILS.SQLI',
+        startDate: new Date(2024, 10),
+      },
+      {
+        client: 'SGS',
+        link: 'https://www.sgs.com/',
+        description: 'EXPERIENCE.SGS',
+        details: 'EXPERIENCE_DETAILS.SGS',
+        startDate: new Date(2024, 10),
+      },
+    ],
   },
   {
     name: 'SFEIR',
-    description: 'EXPERIENCE.SFEIR_EM',
-    link: 'https://www.sfeir.com/',
-    startDate: new Date(2022, 10),
-    endDate: new Date(2024, 10),
-  },
-  {
-    name: 'SFEIR',
-    description: 'EXPERIENCE.SFEIR_ENGINEER',
     link: 'https://www.sfeir.com/',
     startDate: new Date(2018, 10),
-    endDate: new Date(2022, 10),
-  },
-  {
-    name: 'Sidel',
-    description: 'EXPERIENCE.SIDEL',
-    link: 'https://www.sidel.com/',
-    startDate: new Date(2023, 3),
     endDate: new Date(2024, 10),
-  },
-  {
-    name: 'Proximis',
-    description: 'EXPERIENCE.PROXIMIS',
-    link: 'https://www.proximis.com/',
-    startDate: new Date(2022, 3),
-    endDate: new Date(2023, 3),
-  },
-  {
-    name: 'Stellantis',
-    description: 'EXPERIENCE.STELLANTIS',
-    link: 'https://www.stellantis.com/fr',
-    startDate: new Date(2021, 11),
-    endDate: new Date(2022, 3),
-  },
-  {
-    name: 'Crésus',
-    description: 'EXPERIENCE.CRESUS',
-    link: 'https://www.bgvapp.com/',
-    startDate: new Date(2019, 7),
-    endDate: new Date(2021, 5),
-  },
-  {
-    name: 'QAD DynaSys',
-    description: 'EXPERIENCE.DYNASYS',
-    link: 'https://www.dys.com/',
-    startDate: new Date(2018, 10),
-    endDate: new Date(2019, 6),
+    positions: [
+      {
+        client: 'Sidel',
+        link: 'https://www.sidel.com/',
+        description: 'EXPERIENCE.SIDEL',
+        details: 'EXPERIENCE_DETAILS.SIDEL',
+        startDate: new Date(2023, 3),
+        endDate: new Date(2024, 10),
+      },
+      {
+        description: 'EXPERIENCE.SFEIR_EM',
+        details: 'EXPERIENCE_DETAILS.SFEIR_EM',
+        startDate: new Date(2022, 10),
+        endDate: new Date(2024, 10),
+      },
+      {
+        client: 'Proximis',
+        link: 'https://www.proximis.com/',
+        description: 'EXPERIENCE.PROXIMIS',
+        details: 'EXPERIENCE_DETAILS.PROXIMIS',
+        startDate: new Date(2022, 3),
+        endDate: new Date(2023, 3),
+      },
+      {
+        description: 'EXPERIENCE.SFEIR_ENGINEER',
+        details: 'EXPERIENCE_DETAILS.SFEIR_ENGINEER',
+        startDate: new Date(2018, 10),
+        endDate: new Date(2022, 10),
+      },
+      {
+        client: 'Stellantis',
+        link: 'https://www.stellantis.com/fr',
+        description: 'EXPERIENCE.STELLANTIS',
+        details: 'EXPERIENCE_DETAILS.STELLANTIS',
+        startDate: new Date(2021, 11),
+        endDate: new Date(2022, 3),
+      },
+      {
+        client: 'Crésus',
+        link: 'https://www.bgvapp.com/',
+        description: 'EXPERIENCE.CRESUS',
+        details: 'EXPERIENCE_DETAILS.CRESUS',
+        startDate: new Date(2019, 7),
+        endDate: new Date(2021, 5),
+      },
+      {
+        client: 'QAD DynaSys',
+        link: 'https://www.dys.com/',
+        description: 'EXPERIENCE.DYNASYS',
+        details: 'EXPERIENCE_DETAILS.DYNASYS',
+        startDate: new Date(2018, 10),
+        endDate: new Date(2019, 6),
+      },
+    ],
   },
   {
     name: 'John Steel',
-    description: 'EXPERIENCE.JOHN_STEEL',
     link: 'https://www.john-steel.com/',
     startDate: new Date(2017, 9),
     endDate: new Date(2018, 10),
+    positions: [
+      {
+        description: 'EXPERIENCE.JOHN_STEEL',
+        details: 'EXPERIENCE_DETAILS.JOHN_STEEL',
+        startDate: new Date(2017, 9),
+        endDate: new Date(2018, 10),
+      },
+    ],
   },
   {
     name: 'Matière Grise',
-    description: 'EXPERIENCE.MATIERE_GRISE',
     link: 'https://matiere-grise.fr/',
     startDate: new Date(2016, 4),
     endDate: new Date(2017, 8),
+    positions: [
+      {
+        description: 'EXPERIENCE.MATIERE_GRISE',
+        details: 'EXPERIENCE_DETAILS.MATIERE_GRISE',
+        startDate: new Date(2016, 4),
+        endDate: new Date(2017, 8),
+      },
+    ],
   },
   {
     name: 'Conseil régional de Bretagne',
-    description: 'EXPERIENCE.BRETAGNE',
     link: 'https://www.bretagne.bzh/',
     startDate: new Date(2014, 10),
     endDate: new Date(2015, 8),
+    positions: [
+      {
+        description: 'EXPERIENCE.BRETAGNE',
+        details: 'EXPERIENCE_DETAILS.BRETAGNE',
+        startDate: new Date(2014, 10),
+        endDate: new Date(2015, 8),
+      },
+    ],
   },
 ];
 
@@ -155,6 +210,7 @@ export const skillsData = [
       'Angular (Signals, SSR, NgRx/NGXS, RxJS)',
       'Vue.js',
       'Nuxt',
+      'Electron',
     ],
   },
   {
@@ -189,6 +245,15 @@ export const skillsData = [
       'CI/CD (GitLab, GitHub Actions)',
       'Docker',
       'Agile Scrum',
+    ],
+  },
+  {
+    name: 'SKILLS.SPOKEN',
+    description: [
+      'SPOKEN.FR',
+      'SPOKEN.TR',
+      'SPOKEN.EN',
+      'SPOKEN.DE',
     ],
   },
 ];

@@ -1,6 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, Input, NgZone, OnDestroy } from '@angular/core';
 import { animate } from 'motion';
-import { canHover, prefersReducedMotion, springUi } from '../motion/motion.tokens';
+import { canHover, isBrowser, prefersReducedMotion, springUi } from '../motion/motion.tokens';
 
 // Pulls the element toward the pointer when it comes within `magneticRadius` px.
 @Directive({
@@ -15,7 +15,7 @@ export class MagneticDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef<HTMLElement>, private zone: NgZone) {}
 
   ngAfterViewInit(): void {
-    if (!canHover() || prefersReducedMotion()) return;
+    if (!isBrowser || !canHover() || prefersReducedMotion()) return;
 
     const el = this.el.nativeElement;
     let attracted = false;

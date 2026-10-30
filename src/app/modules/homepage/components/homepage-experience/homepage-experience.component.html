@@ -4,14 +4,23 @@
       <div #fill class="timeline-fill"></div>
     </div>
     <ol>
-      <li
-        *ngFor="let item of experienceData; let i = index"
-        class="timeline-item"
-        [class.is-continued]="i > 0 && experienceData[i - 1].name === item?.name"
-        appReveal
-      >
+      <li *ngFor="let company of experienceData" class="timeline-item" appReveal>
         <span class="timeline-node" aria-hidden="true"></span>
-        <app-summary-item appTilt class="card" [item]="item" [sameCompany]="i>0 ? experienceData[i-1].name === item?.name : false" [type]="'experience'"></app-summary-item>
+        <div appTilt class="card company">
+          <h3 class="company-title">
+            <a class="link-underline" [href]="company.link" target="_blank" rel="noopener">{{ company.name }}</a>
+            <span *ngIf="company.positions.length > 1" class="duration">{{ duration(company.startDate, company.endDate) }}</span>
+          </h3>
+          <ul class="positions">
+            <li *ngFor="let position of company.positions">
+              <button type="button" class="position" (click)="open(company, position)">
+                <strong *ngIf="position.client" class="position-client">{{ position.client }}</strong>
+                <span class="position-text">{{ position.description | translate }}</span>
+                <span class="duration">{{ duration(position.startDate, position.endDate) }}</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </li>
     </ol>
   </div>
@@ -20,3 +29,24 @@
 <ng-template #elseTemplate>
   <p class="text-muted">{{ 'EMPTY.EXPERIENCE' | translate }}</p>
 </ng-template>
+
+<dialog #dialog class="exp-dialog" aria-labelledby="exp-dialog-title" (click)="closeOnBackdrop($event)">
+  <ng-container *ngIf="selected">
+    <header class="dialog-header">
+      <div>
+        <p class="dialog-company">
+          {{ selected.company.name }}<ng-container *ngIf="selected.position.client"> · <a class="link-underline" [href]="selected.position.link" target="_blank" rel="noopener">{{ selected.position.client }}</a></ng-container>
+        </p>
+        <h3 id="exp-dialog-title" class="dialog-title">{{ selected.position.description | translate }}</h3>
+        <span class="duration">{{ duration(selected.position.startDate, selected.position.endDate) }}</span>
+      </div>
+      <button type="button" class="dialog-close" (click)="dialog.close()" [attr.aria-label]="'EXPERIENCE_MODAL.CLOSE' | translate">&times;</button>
+    </header>
+    <ng-container *ngIf="(selected.position.details | translate) as details">
+      <p *ngIf="details.INTRO" class="dialog-intro">{{ details.INTRO }}</p>
+      <ul class="dialog-list">
+        <li *ngFor="let line of details.ITEMS">{{ line }}</li>
+      </ul>
+    </ng-container>
+  </ng-container>
+</dialog>

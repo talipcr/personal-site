@@ -7,6 +7,9 @@ import {
 
 // Single source of truth for every animation in the site.
 
+// False during prerender (Node): every animation is skipped server-side
+export const isBrowser = typeof window !== 'undefined';
+
 export const duration = { fast: 0.2, base: 0.4, slow: 0.8 };
 
 export const easeOutExpo: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -36,7 +39,7 @@ export function enter(
   options: AnimationOptions = {}
 ) {
   const elements = Array.isArray(targets) ? targets : [targets];
-  if (!elements.length) return Promise.resolve();
+  if (!isBrowser || !elements.length) return Promise.resolve();
 
   const reduced = prefersReducedMotion();
   elements.forEach((el) => (el.style.willChange = reduced ? 'opacity' : 'transform, opacity'));

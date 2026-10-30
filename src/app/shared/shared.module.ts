@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HeroBackgroundComponent } from './components/hero-background/hero-background.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NeuralBackgroundComponent } from './components/neural-background/neural-background.component';
 import { LoaderSpinnerComponent } from './components/loader-spinner/loader-spinner.component';
@@ -17,6 +18,7 @@ import { TiltDirective } from './directives/tilt.directive';
 
 const COMPONENTS = [
   HeaderComponent,
+  HeroBackgroundComponent,
   FooterComponent,
   LayoutComponent,
   LoaderSpinnerComponent,

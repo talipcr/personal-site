@@ -147,6 +147,8 @@
 }
 
 .hero {
+  position: relative;
+  isolation: isolate; // keeps app-hero-background (z-index: -1) inside the hero
   padding-block: 64px 48px;
 
   @media (min-width: 768px) {

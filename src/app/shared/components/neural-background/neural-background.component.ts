@@ -11,6 +11,7 @@ import { animate, scroll } from 'motion';
 import {
   duration,
   easeOutExpo,
+  isBrowser,
   prefersReducedMotion,
 } from '../../motion/motion.tokens';
 
@@ -55,11 +56,13 @@ export class NeuralBackgroundComponent implements AfterViewInit, OnDestroy {
   private speedFactor = 1;
   private edgeFactor = 1;
   private stopScroll: VoidFunction[] = [];
-  private motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  private motionQuery!: MediaQueryList;
 
   constructor(private zone: NgZone, private host: ElementRef<HTMLElement>) {}
 
   ngAfterViewInit(): void {
+    if (!isBrowser) return;
+    this.motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const ctx = this.canvasRef.nativeElement.getContext('2d');
     if (!ctx) return;
     this.ctx = ctx;
@@ -107,6 +110,7 @@ export class NeuralBackgroundComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!isBrowser) return;
     this.stop();
     this.stopScroll.forEach((stop) => stop());
     window.removeEventListener('resize', this.resize);

@@ -16,7 +16,7 @@
     "SKILLS": "Compétences"
   },
   "ABOUT": {
-    "TEXT": "Senior Software Engineer avec plus de 10 ans d'expérience, spécialisé TypeScript (Angular, Vue) et .NET, je travaille en mode agentique avec l'IA au quotidien. À {{age}} ans, je suis actuellement Senior Full-Stack Engineer chez SQLI à Genève, en mission pour SGS sur une plateforme de gestion de la certification : intégration d'un assistant IA, planification des audits, microservices .NET et migration vers Angular 19. Avant ça, 6 ans chez SFEIR : Lead Full-stack sur une plateforme IoT industrielle pour SIDEL, Lead Full-Stack Angular/Java pour Stellantis, Lead Front-End Vue/Nuxt pour PROXIMIS, et Engineering Manager d'une équipe de 13 développeurs. Mon approche : l'IA propose, l'ingénieur valide — qualité, tests et sécurité avant tout."
+    "TEXT": "Senior Software Engineer avec plus de 10 ans d'expérience, spécialisé TypeScript (Angular, Vue) et .NET, je travaille en mode agentique avec l'IA au quotidien. À {{age}} ans, je suis actuellement Senior Full-Stack Engineer chez SQLI à Genève, en mission pour SGS sur une plateforme de gestion de la certification : intégration d'un assistant IA, planification des audits, microservices .NET et participation à la migration vers Angular 19. Avant ça, 6 ans chez SFEIR : Lead Full-stack sur une plateforme IoT industrielle pour SIDEL, Lead Full-Stack Angular/Java pour Stellantis, Lead Front-End Vue/Nuxt pour PROXIMIS, et Engineering Manager d'une équipe de 13 développeurs. Mon approche : l'IA propose, l'ingénieur valide — qualité, tests et sécurité avant tout."
   },
   "EMPTY": {
     "POST": "Aucun article pour le moment.",
@@ -67,6 +67,138 @@
     "FRONTEND": "Frontend",
     "BACKEND_CLOUD": "Backend & Cloud",
     "AI_AGENTS": "IA & Agents",
-    "QUALITY": "Qualité & DevOps"
+    "QUALITY": "Qualité & DevOps",
+    "SPOKEN": "Langues parlées"
+  },
+  "SPOKEN": {
+    "FR": "Français (natif)",
+    "TR": "Turc (natif)",
+    "EN": "Anglais (professionnel)",
+    "DE": "Allemand (notions)"
+  },
+  "EXPERIENCE_DETAILS": {
+    "SQLI": {
+      "INTRO": "Consultant senior chez SQLI Suisse (Genève), actuellement en mission chez SGS.",
+      "ITEMS": [
+        "Conception et développement d'applications web en TypeScript (Angular, Vue.js) et .NET sur Microsoft Azure",
+        "Participation à l'architecture front-end et aux choix techniques des projets",
+        "Revues de code et mentorat des développeurs juniors",
+        "Développement agentique avec Claude Code : génération de code, tests, revues et migrations",
+        "Contribution ponctuelle au sourcing de profils techniques pour SQLI Suisse (Angular, .NET, mobile, micro-frontends)"
+      ]
+    },
+    "SGS": {
+      "INTRO": "Mission pour SGS, leader mondial de l'inspection, des tests et de la certification. Développeur full-stack sur la plateforme de gestion de la certification (Vue 2, Angular 19, TypeScript, .NET, microservices, Azure).",
+      "ITEMS": [
+        "IA et agents : intégration d'un assistant IA dans l'écran de planification des audits, réponses en streaming (SSE) et propositions de modification du planning validées ou rejetées par l'utilisateur",
+        "Renouvellement du token d'accès (MSAL, JWT) sur les appels en streaming",
+        "Cadre de travail avec agents IA sur le dépôt (AGENTS.md, backlog de dette technique, règles de typage et de vérification), développement agentique en équipe avec Claude Code",
+        "Planification des audits : nouvel écran avec grilles par auditeur et par site, glisser-déposer, redimensionnement, découpage et suppression en lot des réservations",
+        "Règles métier : détection des surréservations et des conflits, calcul des jours-homme à la demi-journée, changement d'auditeur avec reconfirmation client",
+        "Moins d'appels API coûteux : synchronisation locale entre calendriers, rafraîchissement en arrière-plan, flux RxJS (switchMap, forkJoin) sans requêtes en double",
+        "Évolution des microservices Scheduling (.NET, SQL) et Sales (Dapper) exposés via une gateway YARP, notifications e-mail aux auditeurs et aux clients",
+        "Programme d'audit et sécurité : visites de suivi, remplacement de sites multi-sites, matrice de permissions étendue (contexte de sécurité, moteur de règles, restrictions de charge de travail)",
+        "Application d'audit terrain (Angular 19, Electron) : participation à la migration vers Angular 19, passage en OnPush et refonte du store, correction d'incidents de production et d'hypercare (mode hors ligne, plans d'audit, non-conformités)",
+        "Qualité : migration TypeScript 3.9 → 4.9 sans régression, Dev Container commun à l'équipe, documentation sur les wikis Azure DevOps"
+      ]
+    },
+    "SIDEL": {
+      "INTRO": "Plateforme IoT industrie 4.0 : stockage dans le cloud des données des machines d'usine, consultables par machine et par service via une application web ou une installation on-premise.",
+      "ITEMS": [
+        "Lead full-stack d'une équipe d'une vingtaine de développeurs",
+        "Développement et maintenance de la plateforme : Angular (front), Node.js/NestJS (back), Google Cloud Platform",
+        "Architecture GCP de traitement des données : App Engine, Compute Engine, Cloud Functions, Firebase, Bigtable, BigQuery, Cloud SQL",
+        "Développement et maintenance de l'API de référence des services SIDEL",
+        "Méthodes agiles (Scrum)"
+      ]
+    },
+    "SFEIR_EM": {
+      "INTRO": "En parallèle de mes missions, Engineering Manager au sein de SFEIR Strasbourg.",
+      "ITEMS": [
+        "Management d'une équipe de 13 développeurs : accompagnement, suivi et montée en compétences",
+        "Entretiens annuels, staffing des développeurs sur les missions et suivi budgétaire de l'équipe",
+        "Recrutement technique : entretiens et évaluation des candidats",
+        "Organisation d'événements internes pour la communauté de développeurs",
+        "Mentorat et partage de bonnes pratiques (Angular, Vue.js, architecture front-end)"
+      ]
+    },
+    "PROXIMIS": {
+      "INTRO": "Nouvelle application e-commerce en Nuxt 2, Vue 2 et Vuetify 2, puis migration vers Nuxt 3, Vue 3 et Vuetify 3.",
+      "ITEMS": [
+        "Lead front-end : développement, optimisation et maintenance de l'application",
+        "Intégration des maquettes InVision et développement des fonctionnalités",
+        "Migration de l'existant vers Nuxt 3 / Vue 3 / Vuetify 3",
+        "Tests end-to-end Cypress, documentation technique",
+        "Formation et accompagnement des développeurs de l'équipe",
+        "Cérémonies Agile Scrum : daily, sprint review, démo, synchronisations techniques"
+      ]
+    },
+    "SFEIR_ENGINEER": {
+      "INTRO": "Consultant développeur chez SFEIR Strasbourg, en mission chez des clients grands comptes et éditeurs de logiciels.",
+      "ITEMS": [
+        "QAD DynaSys : migration AngularJS vers Angular, gestion d'état NGXS",
+        "Crésus : développement d'une WebApp Angular, tests Cypress, CI/CD GitLab et Jenkins",
+        "Stellantis : lead full-stack sur une nouvelle application (Angular, Java / Spring Boot), images Docker",
+        "Évolution de développeur front-end vers lead front-end puis lead full-stack"
+      ]
+    },
+    "STELLANTIS": {
+      "ITEMS": [
+        "Lead technique : développement, optimisation et maintenance d'une nouvelle application",
+        "Développement full-stack : front-end Angular et back-end Java / Spring Boot (API REST, accès aux données)",
+        "Intégration des maquettes et développement des fonctionnalités",
+        "Tests end-to-end Cypress",
+        "Création et déploiement d'images Docker",
+        "Cérémonies Agile Scrum : daily, sprint review, démo, synchronisations techniques"
+      ]
+    },
+    "CRESUS": {
+      "ITEMS": [
+        "Développement, optimisation et maintenance d'une WebApp Angular",
+        "Intégration des maquettes et développement de nouvelles fonctionnalités",
+        "Tests end-to-end Cypress pour Angular",
+        "Versioning et CI/CD : Git, GitLab, Jenkins",
+        "Amélioration des outils internes et veille technologique",
+        "Cérémonies Agile Scrum"
+      ]
+    },
+    "DYNASYS": {
+      "ITEMS": [
+        "Migration de la WebApp d'AngularJS vers Angular",
+        "Mise en place de la gestion d'état NGXS",
+        "Nouvelles fonctionnalités : vue hiérarchique, vue diagramme, panneau latéral",
+        "Réécriture et écriture de tests Selenium (C++)",
+        "Contributions back-end en C++ et C#"
+      ]
+    },
+    "JOHN_STEEL": {
+      "ITEMS": [
+        "Amélioration continue de l'ergonomie et de la portabilité des projets",
+        "Travail sur les maquettes de pages web et intégration de leurs éléments",
+        "Participation à des développements back-end",
+        "Participation à l'amélioration du référencement SEO",
+        "Amélioration des outils internes et veille technologique"
+      ]
+    },
+    "MATIERE_GRISE": {
+      "ITEMS": [
+        "Réalisation de sites web responsive et adaptive, blogs, plateformes e-commerce et e-business",
+        "Réalisation d'applications mobiles et WebApps",
+        "Réalisation de sites intranet/extranet",
+        "Formation des organismes à l'utilisation de CMS (WordPress, Drupal…)",
+        "Participation à la création graphique des maquettes"
+      ]
+    },
+    "BRETAGNE": {
+      "ITEMS": [
+        "Administration, maintenance et mise à jour des portails web et mobile, développement de nouveaux portails",
+        "Formation des contributeurs et assistance aux utilisateurs",
+        "Participation à des projets de création de sites internet pour la collectivité",
+        "Langages : HTML5 (Bootstrap, responsive), CSS/LESS, JavaScript, JSP, PHP"
+      ]
+    }
+  },
+  "EXPERIENCE_MODAL": {
+    "CLOSE": "Fermer"
   }
 }

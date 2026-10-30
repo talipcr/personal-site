@@ -16,7 +16,7 @@
     "SKILLS": "Skills"
   },
   "ABOUT": {
-    "TEXT": "Senior Software Engineer with over 10 years of experience, specialized in TypeScript (Angular, Vue) and .NET, working in an agentic way with AI every day. At {{age}}, I am currently a Senior Full-Stack Engineer at SQLI in Geneva, on assignment for SGS on a certification management platform: AI assistant integration, audit planning, .NET microservices and migration to Angular 19. Before that, I spent 6 years at SFEIR as Lead Full-stack on an industrial IoT platform for SIDEL, Lead Full-Stack Angular/Java for Stellantis, Lead Front-End Vue/Nuxt for PROXIMIS, and Engineering Manager of a team of 13 developers. My approach: AI proposes, the engineer validates — quality, tests and security first."
+    "TEXT": "Senior Software Engineer with over 10 years of experience, specialized in TypeScript (Angular, Vue) and .NET, working in an agentic way with AI every day. At {{age}}, I am currently a Senior Full-Stack Engineer at SQLI in Geneva, on assignment for SGS on a certification management platform: AI assistant integration, audit planning, .NET microservices and contribution to the migration to Angular 19. Before that, I spent 6 years at SFEIR as Lead Full-stack on an industrial IoT platform for SIDEL, Lead Full-Stack Angular/Java for Stellantis, Lead Front-End Vue/Nuxt for PROXIMIS, and Engineering Manager of a team of 13 developers. My approach: AI proposes, the engineer validates — quality, tests and security first."
   },
   "EMPTY": {
     "POST": "No post yet.",
@@ -67,6 +67,138 @@
     "FRONTEND": "Frontend",
     "BACKEND_CLOUD": "Backend & Cloud",
     "AI_AGENTS": "AI & Agents",
-    "QUALITY": "Quality & DevOps"
+    "QUALITY": "Quality & DevOps",
+    "SPOKEN": "Spoken languages"
+  },
+  "SPOKEN": {
+    "FR": "French (native)",
+    "TR": "Turkish (native)",
+    "EN": "English (professional)",
+    "DE": "German (elementary)"
+  },
+  "EXPERIENCE_DETAILS": {
+    "SQLI": {
+      "INTRO": "Senior consultant at SQLI Switzerland (Geneva), currently on assignment at SGS.",
+      "ITEMS": [
+        "Design and development of web applications in TypeScript (Angular, Vue.js) and .NET on Microsoft Azure",
+        "Contribution to front-end architecture and technical choices",
+        "Code reviews and mentoring of junior developers",
+        "Agentic development with Claude Code: code generation, tests, reviews and migrations",
+        "Occasional sourcing of technical profiles for SQLI Switzerland (Angular, .NET, mobile, micro-frontends)"
+      ]
+    },
+    "SGS": {
+      "INTRO": "Assignment for SGS, the world leader in inspection, testing and certification. Full-stack developer on the certification management platform (Vue 2, Angular 19, TypeScript, .NET, microservices, Azure).",
+      "ITEMS": [
+        "AI and agents: AI assistant integrated into the audit planning screen, streamed answers (SSE) and planning change proposals accepted or rejected by the user",
+        "Access token renewal (MSAL, JWT) on streaming calls",
+        "AI agent framework on the repository (AGENTS.md, tech debt backlog, typing and verification rules), team agentic development with Claude Code",
+        "Audit planning: new screen with grids per auditor and per site, drag and drop, resizing, splitting and bulk deletion of bookings",
+        "Business rules: overbooking and conflict detection, man-day calculation by half-day, auditor change with client reconfirmation",
+        "Fewer costly API calls: local sync between calendars, background refresh, RxJS streams (switchMap, forkJoin) without duplicate requests",
+        "Evolution of the Scheduling (.NET, SQL) and Sales (Dapper) microservices behind a YARP gateway, email notifications to auditors and clients",
+        "Audit programme and security: follow-up visits, multi-site replacement, extended permission matrix (security context, rule engine, workload restrictions)",
+        "Field audit app (Angular 19, Electron): contribution to the Angular 19 migration, OnPush and store rework, production and hypercare fixes (offline mode, audit plans, non-conformities)",
+        "Quality: TypeScript 3.9 → 4.9 migration with no regression, shared team Dev Container, documentation on Azure DevOps wikis"
+      ]
+    },
+    "SIDEL": {
+      "INTRO": "Industry 4.0 IoT platform: factory machine data stored in the cloud, browsable per machine and per service through a web app or an on-premise install.",
+      "ITEMS": [
+        "Full-stack lead of a team of about twenty developers",
+        "Platform development and maintenance: Angular (front), Node.js/NestJS (back), Google Cloud Platform",
+        "GCP data processing architecture: App Engine, Compute Engine, Cloud Functions, Firebase, Bigtable, BigQuery, Cloud SQL",
+        "Development and maintenance of the SIDEL services reference API",
+        "Agile methods (Scrum)"
+      ]
+    },
+    "SFEIR_EM": {
+      "INTRO": "Alongside my assignments, Engineering Manager at SFEIR Strasbourg.",
+      "ITEMS": [
+        "Management of a team of 13 developers: coaching, follow-up and skills growth",
+        "Annual reviews, staffing developers on assignments and team budget tracking",
+        "Technical recruitment: interviews and candidate assessment",
+        "Organisation of internal events for the developer community",
+        "Mentoring and sharing best practices (Angular, Vue.js, front-end architecture)"
+      ]
+    },
+    "PROXIMIS": {
+      "INTRO": "New e-commerce application in Nuxt 2, Vue 2 and Vuetify 2, then migration to Nuxt 3, Vue 3 and Vuetify 3.",
+      "ITEMS": [
+        "Front-end lead: development, optimisation and maintenance of the application",
+        "InVision mockup integration and feature development",
+        "Migration of the existing code to Nuxt 3 / Vue 3 / Vuetify 3",
+        "Cypress end-to-end tests, technical documentation",
+        "Training and coaching of the team's developers",
+        "Agile Scrum ceremonies: daily, sprint review, demo, technical syncs"
+      ]
+    },
+    "SFEIR_ENGINEER": {
+      "INTRO": "Consultant developer at SFEIR Strasbourg, on assignment for large accounts and software vendors.",
+      "ITEMS": [
+        "QAD DynaSys: AngularJS to Angular migration, NGXS state management",
+        "Crésus: Angular WebApp development, Cypress tests, GitLab and Jenkins CI/CD",
+        "Stellantis: full-stack lead on a new application (Angular, Java / Spring Boot), Docker images",
+        "Growth from front-end developer to front-end lead, then full-stack lead"
+      ]
+    },
+    "STELLANTIS": {
+      "ITEMS": [
+        "Tech lead: development, optimisation and maintenance of a new application",
+        "Full-stack development: Angular front-end and Java / Spring Boot back-end (REST API, data access)",
+        "Mockup integration and feature development",
+        "Cypress end-to-end tests",
+        "Building and deploying Docker images",
+        "Agile Scrum ceremonies: daily, sprint review, demo, technical syncs"
+      ]
+    },
+    "CRESUS": {
+      "ITEMS": [
+        "Development, optimisation and maintenance of an Angular WebApp",
+        "Mockup integration and new feature development",
+        "Cypress end-to-end tests for Angular",
+        "Versioning and CI/CD: Git, GitLab, Jenkins",
+        "Internal tooling improvements and technology watch",
+        "Agile Scrum ceremonies"
+      ]
+    },
+    "DYNASYS": {
+      "ITEMS": [
+        "WebApp migration from AngularJS to Angular",
+        "NGXS state management setup",
+        "New features: hierarchy view, diagram view, side panel",
+        "Rewriting and writing Selenium tests (C++)",
+        "Back-end contributions in C++ and C#"
+      ]
+    },
+    "JOHN_STEEL": {
+      "ITEMS": [
+        "Continuous improvement of the projects' usability and portability",
+        "Work on web page mockups and integration of their elements",
+        "Back-end development contributions",
+        "SEO improvements",
+        "Internal tooling improvements and technology watch"
+      ]
+    },
+    "MATIERE_GRISE": {
+      "ITEMS": [
+        "Responsive and adaptive websites, blogs, e-commerce and e-business platforms",
+        "Mobile apps and WebApps",
+        "Intranet/extranet sites",
+        "Training organisations to use CMSs (WordPress, Drupal…)",
+        "Contribution to mockup graphic design"
+      ]
+    },
+    "BRETAGNE": {
+      "ITEMS": [
+        "Administration, maintenance and updates of the web and mobile portals, development of new portals",
+        "Contributor training and user support",
+        "Contribution to website projects for the region",
+        "Languages: HTML5 (Bootstrap, responsive), CSS/LESS, JavaScript, JSP, PHP"
+      ]
+    }
+  },
+  "EXPERIENCE_MODAL": {
+    "CLOSE": "Close"
   }
 }

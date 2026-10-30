@@ -1,6 +1,6 @@
 import { AfterViewInit, Directive, ElementRef, NgZone, OnDestroy } from '@angular/core';
 import { animate, hover } from 'motion';
-import { canHover, prefersReducedMotion, springUi } from '../motion/motion.tokens';
+import { canHover, isBrowser, prefersReducedMotion, springUi } from '../motion/motion.tokens';
 
 // Small spring lift on hover (stack tags).
 @Directive({
@@ -12,7 +12,7 @@ export class FloatDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef<HTMLElement>, private zone: NgZone) {}
 
   ngAfterViewInit(): void {
-    if (!canHover() || prefersReducedMotion()) return;
+    if (!isBrowser || !canHover() || prefersReducedMotion()) return;
     const el = this.el.nativeElement;
     this.zone.runOutsideAngular(() => {
       this.stopHover = hover(el, () => {

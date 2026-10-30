@@ -13,9 +13,9 @@
 <ng-template #elseTemplate>
   <app-layout>
     <app-header *ngIf="currentRoute !== '/404'"></app-header>
-    <div #page>
+    <main #page>
       <router-outlet (activate)="animatePage(page)"></router-outlet>
-    </div>
+    </main>
     <app-footer *ngIf="currentRoute !== '/404'"></app-footer>
   </app-layout>
 </ng-template>

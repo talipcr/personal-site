@@ -1,4 +1,5 @@
-import { Component, NgZone } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, NgZone } from '@angular/core';
 import {
   NavigationStart,
   NavigationEnd,
@@ -7,7 +8,7 @@ import {
   Router,
 } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { duration, enter } from './shared/motion/motion.tokens';
+import { duration, enter, isBrowser } from './shared/motion/motion.tokens';
 
 export const LANGUAGES = ['en', 'fr'];
 export const LANGUAGE_STORAGE_KEY = 'lang';
@@ -18,21 +19,23 @@ export const LANGUAGE_STORAGE_KEY = 'lang';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  loading: boolean = true;
+  // false at boot so the prerendered page is not replaced by the spinner
+  loading: boolean = false;
   currentRoute: string = '';
 
   constructor(
     private router: Router,
     private translate: TranslateService,
-    private zone: NgZone
+    private zone: NgZone,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.translate.addLangs(LANGUAGES);
     this.translate.setDefaultLang('en');
     this.translate.onLangChange.subscribe((event) => {
-      document.documentElement.lang = event.lang;
-      localStorage.setItem(LANGUAGE_STORAGE_KEY, event.lang);
+      this.document.documentElement.lang = event.lang;
+      if (isBrowser) localStorage.setItem(LANGUAGE_STORAGE_KEY, event.lang);
     });
-    const savedLang = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    const savedLang = isBrowser ? localStorage.getItem(LANGUAGE_STORAGE_KEY) : null;
     const browserLang = this.translate.getBrowserLang();
     this.translate.use(
       [savedLang, browserLang].find(
@@ -43,7 +46,8 @@ export class AppComponent {
     this.router.events.subscribe(async (event) => {
       switch (true) {
         case event instanceof NavigationStart: {
-          this.loading = await true;
+          // No spinner on the initial navigation (currentRoute still empty)
+          this.loading = await !!this.currentRoute;
           break;
         }
 

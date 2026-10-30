@@ -20,6 +20,7 @@ import {
   easeOutExpo,
   enter,
   fadeUp,
+  isBrowser,
   prefersReducedMotion,
   scaleIn,
   springSoft,
@@ -56,7 +57,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   secondaryLinks = this.link.slice(2);
   lang = LANGUAGES;
   nameChars = Array.from(this.name).map((char) => (char === ' ' ? ' ' : char));
-  tags = skillsData.flatMap((skill) => skill.description.slice(0, 2));
+  tags = skillsData
+    .filter((skill) => skill.name !== 'SKILLS.SPOKEN')
+    .flatMap((skill) => skill.description.slice(0, 2));
   sections = [
     { id: 'about', label: 'HOME.ABOUT' },
     { id: 'projects', label: 'HOME.PROJECTS' },
@@ -97,6 +100,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   ) {}
 
   ngAfterViewInit(): void {
+    if (!isBrowser) return;
     this.zone.runOutsideAngular(() => {
       this.playIntro();
       this.watchScroll();

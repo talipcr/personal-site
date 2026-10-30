@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, NgZone, OnDestroy, ViewChild } from '@angular/core';
 import { inView } from 'motion';
-import { duration, enter } from 'src/app/shared/motion/motion.tokens';
+import { duration, enter, isBrowser } from 'src/app/shared/motion/motion.tokens';
 
 @Component({
   selector: 'app-homepage-layout',
@@ -17,6 +17,7 @@ export class HomepageLayoutComponent implements AfterViewInit, OnDestroy {
   constructor(private zone: NgZone) {}
 
   ngAfterViewInit(): void {
+    if (!isBrowser) return;
     const stroke = this.strokeRef.nativeElement;
     stroke.style.opacity = '0';
     // Gradient stroke under the title draws itself from the left
