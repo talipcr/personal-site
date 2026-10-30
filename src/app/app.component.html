@@ -8,10 +8,14 @@
   <app-loader-spinner></app-loader-spinner>
 </div>
 
+<app-neural-background></app-neural-background>
+
 <ng-template #elseTemplate>
   <app-layout>
     <app-header *ngIf="currentRoute !== '/404'"></app-header>
-    <router-outlet></router-outlet>
+    <main #page>
+      <router-outlet (activate)="animatePage(page)"></router-outlet>
+    </main>
     <app-footer *ngIf="currentRoute !== '/404'"></app-footer>
   </app-layout>
 </ng-template>

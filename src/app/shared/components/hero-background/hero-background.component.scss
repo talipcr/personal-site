@@ -1,0 +1,199 @@
+// Tuning knobs: colors, layer opacities, blob blur
+// Deep tones on purpose: the light accents (--accent-1/2) behind --text-muted
+// drop below WCAG AA as soon as a blob passes at > ~5% opacity.
+:host {
+  --hb-c1: #512bd4; // .NET violet
+  --hb-c2: #0369a1;
+  --hb-c3: #6d28d9;
+  --hb-c4: #1d4ed8;
+  --hb-blob-opacity: 0.18;
+  --hb-blob-blur: 100px;
+  --hb-grid-opacity: 0.18;
+  --hb-code-opacity: 0.12;
+
+  // Full-bleed even though the hero sits in .shell
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+
+:host(.is-subtle) {
+  --hb-blob-opacity: 0.12;
+  --hb-grid-opacity: 0.1;
+  --hb-code-opacity: 0.08;
+}
+
+:host(.is-paused) * {
+  animation-play-state: paused !important;
+}
+
+.hb-blobs,
+.hb-grid,
+.hb-code,
+.hb-vignette {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------- Layer 1: drifting blobs ---------- */
+.hb-blob {
+  position: absolute;
+  width: 42vmax;
+  height: 42vmax;
+  border-radius: 50%;
+  opacity: var(--hb-blob-opacity);
+  filter: blur(var(--hb-blob-blur)); // static, only transform is animated
+  will-change: transform;
+  animation: hb-drift-1 19s ease-in-out infinite alternate;
+
+  &:nth-child(1) {
+    top: -20%;
+    left: -10%;
+  }
+
+  &:nth-child(2) {
+    top: 10%;
+    right: -15%;
+    animation-name: hb-drift-2;
+    animation-duration: 23s;
+  }
+
+  &:nth-child(3) {
+    bottom: -30%;
+    left: 20%;
+    animation-name: hb-drift-3;
+    animation-duration: 16s;
+  }
+
+  &:nth-child(4) {
+    bottom: -25%;
+    right: 10%;
+    width: 30vmax;
+    height: 30vmax;
+    animation-name: hb-drift-4;
+    animation-duration: 25s;
+  }
+
+  // Mobile: half the blobs
+  @media (max-width: 767px) {
+    &:nth-child(n + 3) {
+      display: none;
+    }
+  }
+}
+
+@keyframes hb-drift-1 {
+  to {
+    transform: translate(18vw, 12vh) scale(1.15);
+  }
+}
+
+@keyframes hb-drift-2 {
+  to {
+    transform: translate(-16vw, 18vh) scale(0.9);
+  }
+}
+
+@keyframes hb-drift-3 {
+  to {
+    transform: translate(12vw, -20vh) scale(1.1);
+  }
+}
+
+@keyframes hb-drift-4 {
+  to {
+    transform: translate(-20vw, -10vh) scale(1.2);
+  }
+}
+
+/* ---------- Layer 2: dot grid (pointer parallax in TS) ---------- */
+.hb-grid {
+  inset: -24px; // room for the parallax offset
+  opacity: var(--hb-grid-opacity);
+  background-image: radial-gradient(var(--node) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+
+  // Mobile: ~half the dots
+  @media (max-width: 767px) {
+    background-size: 40px 40px;
+  }
+}
+
+/* ---------- Layer 3: rising code fragments ---------- */
+.hb-fragment {
+  position: absolute;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  color: var(--accent-1);
+  opacity: 0;
+  animation: hb-rise 22s linear infinite;
+
+  @media (max-width: 767px) {
+    &:nth-child(even) {
+      display: none;
+    }
+  }
+}
+
+@keyframes hb-rise {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20%,
+  75% {
+    opacity: var(--hb-code-opacity);
+  }
+
+  to {
+    transform: translateY(-360px);
+    opacity: 0;
+  }
+}
+
+/* ---------- Layer 4: vignette + grain ---------- */
+.hb-vignette {
+  // Text-side veil: 0.55 keeps --text-muted >= 4.5:1 even with 2 blobs overlapping
+  --hb-veil: rgba(6, 10, 25, 0.55);
+
+  background:
+    linear-gradient(90deg, var(--hb-veil) 70%, transparent),
+    // Fades into the page at the edges
+    radial-gradient(ellipse at 50% 40%, transparent 45%, var(--bg-0) 100%);
+
+  // Mobile: text spans the full width
+  @media (max-width: 767px) {
+    background:
+      linear-gradient(var(--hb-veil), var(--hb-veil)),
+      radial-gradient(ellipse at 50% 40%, transparent 45%, var(--bg-0) 100%);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ---------- Reduced motion: frozen gradient, no fragments ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hb-blob {
+    animation: none;
+  }
+
+  .hb-code {
+    display: none;
+  }
+}

@@ -1,35 +1,28 @@
-<h3
-  *ngIf="!sameCompany"
-  class="font-semibold text-gray-900 pb-1"
-  [ngClass]="{
-    'hover:underline hover:text-black': item?.link || item?.internal_link
-  }"
->
+<h3 class="summary-title">
   <ng-template
     [ngIf]="item?.link || item?.internal_link"
     [ngIfElse]="elseTemplate"
   >
-    <a *ngIf="item?.link" [href]="item?.link" target="_blank">
-      {{ item?.name }}
+    <a *ngIf="item?.link" class="link-underline" [href]="item?.link" target="_blank">
+      {{ item?.name | translate }}
     </a>
 
-    <a *ngIf="item?.internal_link" [routerLink]="item?.internal_link">
-      {{ item?.name }}
+    <a *ngIf="item?.internal_link" class="link-underline" [routerLink]="item?.internal_link">
+      {{ item?.name | translate }}
     </a>
   </ng-template>
 
   <ng-template #elseTemplate>
-    {{ item?.name }}
+    {{ item?.name | translate }}
   </ng-template>
 </h3>
 
-<svg *ngIf="sameCompany" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-  <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
-</svg>
+<ul *ngIf="isList(item.description); else textTemplate" class="summary-tags">
+  <li *ngFor="let tag of item.description" class="pill" appFloat>{{ tag | translate }}</li>
+</ul>
 
-<p class="text-md text-gray-600 font-light" appFormatItem>
-  {{ item.description
-  }}<span *ngIf="type === 'experience'"
-    >&nbsp;({{ calculateDiff(item?.startDate, item?.endDate) }})
-  </span>
-</p>
+<ng-template #textTemplate>
+  <p class="summary-text">
+    {{ item.description | translate }}
+  </p>
+</ng-template>

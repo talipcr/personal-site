@@ -1,81 +1,133 @@
-<div class="block mb-6 md:flex">
-  <div class="w-full max-w-150">
-    <a routerLink="/">
-      <img
-        class="
-          rounded-full
-          transform
-          transition-all
-          duration-150
-          hover:scale-105
-        "
-        src="https://avatars.githubusercontent.com/u/15056752?v=4"
-        alt="{{ name }}"
-      />
-    </a>
-  </div>
-  <div class="flex-none pt-6 md:pt-1 md:flex-1 md:pl-20">
-    <div
-      fxLayout="column"
-      fxLayoutAlign="space-between"
-      fxLayoutAlign="stretch"
-    >
-      <h1
-        fxFlexOrder="2"
-        class="text-5xl text-gray-900 font-bold leading-tight hover:text-black"
-      >
-        {{ name }}
-      </h1>
-      <!-- <ul fxFlexOrder="1" fxFlexAlign="end" class="uppercase tracking-wider">
-        <li *ngFor="let item of lang" class="inline list-none pr-4">
+<ng-template #icon let-name>
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      [attr.d]="icons[name]"
+      [attr.fill]="name === 'email' ? 'none' : 'currentColor'"
+      [attr.stroke]="name === 'email' ? 'currentColor' : null"
+    />
+  </svg>
+</ng-template>
+
+<nav
+  #nav
+  class="nav"
+  [attr.aria-label]="'HEADER.NAV' | translate"
+  (focusin)="showNav()"
+>
+  <div #navBg class="nav-bg" aria-hidden="true"></div>
+
+  <div class="shell nav-inner">
+    <a routerLink="/" class="nav-brand font-display">{{ name }}</a>
+
+    <div class="nav-links-wrap">
+      <ul class="nav-links">
+        <li *ngFor="let section of sections">
           <a
-            class="
-              inline-block
-              py-2
-              font-semibold
-              text-xs text-gray-600
-              hover:text-black
-            "
-            [href]="item"
-            target="_blank"
+            #navLink
+            class="nav-link"
+            [class.is-active]="section.id === activeSection"
+            [attr.aria-current]="section.id === activeSection ? 'location' : null"
+            [href]="'#' + section.id"
           >
-            {{ item | uppercase }}
+            {{ section.label | translate }}
           </a>
         </li>
-      </ul> -->
+      </ul>
+      <span #indicator class="nav-indicator" aria-hidden="true"></span>
     </div>
-    <p class="text-gray-600">{{ description }}</p>
-    <ul class="mt-6 uppercase tracking-wider">
-      <li *ngFor="let item of link" class="inline list-none pr-4">
-        <a
-          class="
-            inline-block
-            py-2
-            font-semibold
-            text-xs text-gray-600
-            hover:text-black
-          "
-          [href]="item.href"
-          target="_blank"
+
+    <ul class="nav-lang">
+      <li *ngFor="let item of lang">
+        <button
+          type="button"
+          class="nav-link link-underline"
+          [class.is-active]="item === translate.currentLang"
+          [attr.aria-pressed]="item === translate.currentLang"
+          (click)="switchLang(item)"
         >
-          {{ item.name | uppercase }}
+          {{ item }}
+        </button>
+      </li>
+    </ul>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      [class.is-open]="menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="mobile-menu"
+      [attr.aria-label]="'HEADER.MENU' | translate"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div #menu id="mobile-menu" class="mobile-menu" [hidden]="!menuOpen">
+    <ul class="shell">
+      <li *ngFor="let section of sections" class="mobile-menu-item">
+        <a
+          class="mobile-link"
+          [class.is-active]="section.id === activeSection"
+          [href]="'#' + section.id"
+          (click)="closeMenu()"
+        >
+          {{ section.label | translate }}
         </a>
       </li>
-
-      <!-- <li class="inline list-none pr-4">
-        <a
-          class="
-            inline-block
-            py-2
-            font-semibold
-            text-xs text-gray-600
-            hover:text-black
-          "
-          routerLink="/blog"
-        >
-          Blog
-        </a>
-      </li> -->
     </ul>
   </div>
-</div>
+</nav>
+
+<header #hero id="top" class="hero shell">
+  <app-hero-background [showCodeFragments]="true"></app-hero-background>
+
+  <a routerLink="/" class="hero-avatar">
+    <img
+      src="https://avatars.githubusercontent.com/u/15056752?v=4"
+      alt="{{ name }}"
+      width="120"
+      height="120"
+    />
+  </a>
+
+  <h1 class="hero-name" [attr.aria-label]="name">
+    <span *ngFor="let char of nameChars" class="hero-letter" aria-hidden="true">{{ char }}</span>
+  </h1>
+  <p class="hero-title font-display text-gradient">
+    {{ 'HEADER.TITLE' | translate }}
+  </p>
+  <p class="hero-description veil text-muted">
+    {{ 'HEADER.DESCRIPTION' | translate }}
+  </p>
+
+  <ul class="hero-tags">
+    <li *ngFor="let tag of tags" class="pill" appFloat>{{ tag }}</li>
+  </ul>
+
+  <div class="hero-actions">
+    <a appMagnetic class="btn btn-primary social-link" [href]="linkedin.href" target="_blank" rel="noopener">
+      <ng-container *ngTemplateOutlet="icon; context: { $implicit: linkedin.name }"></ng-container>
+      {{ linkedin.name | uppercase }}
+    </a>
+    <a appMagnetic class="btn btn-secondary social-link" [href]="github.href" target="_blank" rel="noopener">
+      <ng-container *ngTemplateOutlet="icon; context: { $implicit: github.name }"></ng-container>
+      {{ github.name | uppercase }}
+    </a>
+    <a
+      *ngFor="let item of secondaryLinks"
+      class="hero-link social-link font-mono"
+      [href]="item.href"
+      target="_blank"
+      rel="noopener"
+    >
+      <ng-container *ngTemplateOutlet="icon; context: { $implicit: item.name }"></ng-container>
+      {{ item.name | uppercase }}
+    </a>
+  </div>
+
+  <p class="hero-meta font-mono">
+    <span #count>10</span>+ {{ 'HEADER.META' | translate }}
+  </p>
+</header>

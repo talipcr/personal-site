@@ -2,6 +2,289 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* ---------- Neural network theme: tokens ---------- */
+:root {
+  --bg-0: #060a19;
+  --bg-1: #101a3f;
+  --surface: rgba(124, 160, 255, 0.06);
+  --surface-border: rgba(124, 160, 255, 0.18);
+  --text: #ffffff;
+  --text-muted: rgba(200, 210, 240, 0.6);
+  --accent-1: #7cc8ff;
+  --accent-2: #b49cff;
+  --gradient: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  --glow: rgba(124, 92, 255, 0.28);
+  --node: rgba(150, 220, 255, 1);
+  --edge: rgba(120, 160, 255, 0.35);
+  --pill-bg: rgba(124, 160, 255, 0.12);
+  --pill-border: rgba(124, 160, 255, 0.35);
+  --pill-text: #cfe0ff;
+  --veil: rgba(6, 10, 25, 0.72);
+  --nav-bg: rgba(6, 10, 25, 0.6);
+  --nav-bg-solid: rgba(6, 10, 25, 0.92);
+  --on-accent: #060a19;
+  --nav-height: 64px;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-0);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  // Violet halo lives in app-neural-background (parallax)
+  background: linear-gradient(135deg, var(--bg-0), var(--bg-1));
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-1);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--glow);
+}
+
+/* ---------- Layout ---------- */
+.shell {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 16px;
+
+  @media (min-width: 640px) {
+    padding-inline: 32px;
+  }
+}
+
+/* Dark veil behind text so the network never hurts contrast */
+.veil {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -48px -64px;
+    z-index: -1;
+    background: radial-gradient(
+      closest-side,
+      var(--veil) 60%,
+      transparent
+    );
+    pointer-events: none;
+  }
+}
+
+/* ---------- Typography helpers ---------- */
+.text-gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.font-display {
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ---------- Components ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid var(--pill-border);
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  // transform is driven by Motion (magnetic effect): never transition it in CSS
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--gradient);
+  color: var(--on-accent);
+
+  // Animated gradient on hover: reversed gradient faded in (opacity only)
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    box-shadow: 0 8px 28px var(--glow);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.social-icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+
+  path {
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+  }
+}
+
+.btn-secondary {
+  border: 1px solid var(--pill-border);
+  color: var(--pill-text);
+  background: var(--surface);
+
+  &:hover {
+    border-color: var(--accent-1);
+    box-shadow: 0 8px 28px var(--glow);
+  }
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  // No backdrop-filter: re-blurring the animated canvas under every card costs FPS.
+  // transform is driven by Motion (appTilt): never transition it in CSS.
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    border-color: var(--pill-border);
+    box-shadow: 0 12px 40px var(--glow);
+  }
+}
+
+// Violet glow following the cursor (moved by appTilt)
+.card-glow {
+  position: absolute;
+  top: -160px;
+  left: -160px;
+  z-index: -1;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--glow), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+/* Gradient underline for links (nav active, inline links) */
+.link-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover::after,
+  &.is-active::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Section separator: connection line with a glowing node */
+.node-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, var(--edge), transparent 80%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--node);
+    box-shadow: 0 0 12px var(--node), 0 0 24px var(--glow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 @layer base {
   .blog-content {
     @apply text-gray-600;

@@ -1,25 +1,8 @@
-<div class="block pt-12 md:flex">
-  <div class="pb-6 md:w-full md:max-w-150 md:p-0">
-    <h2
-      class="
-        font-xs font-light
-        tracking-widest
-        text-sm text-gray-600
-        leading-normal
-      "
-    >
-      {{ title | uppercase }}
-    </h2>
-  </div>
-  <div
-    class="
-      flex-none
-      text-lg text-gray-600
-      font-light
-      bg-white
-      md:flex-1 md:pl-20
-    "
-  >
+<section [id]="anchor" class="section shell">
+  <div class="node-divider mb-10" aria-hidden="true"></div>
+  <h2 class="section-title" appReveal>{{ title }}</h2>
+  <span #stroke class="section-stroke" aria-hidden="true"></span>
+  <div class="veil text-lg text-muted">
     <ng-content></ng-content>
   </div>
-</div>
+</section>

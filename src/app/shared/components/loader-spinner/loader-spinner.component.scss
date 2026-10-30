@@ -1,0 +1,22 @@
+.loader {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-ring {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 2px solid var(--surface-border);
+  border-bottom-color: var(--accent-1);
+  border-left-color: var(--accent-2);
+}
+
+.loader-label {
+  position: absolute;
+  font-size: 0.75rem;
+  color: var(--accent-1);
+}

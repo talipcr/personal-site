@@ -9,6 +9,7 @@ import { HomepageSkillsComponent } from './components/homepage-skills/homepage-s
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomepageComponent } from './homepage.component';
 import { HomepageCertificationsComponent } from './components/homepage-certifications/homepage-certifications.component';
+import { HomepageEducationComponent } from './components/homepage-education/homepage-education.component';
 
 const COMPONENTS = [
   HomepageComponent,
@@ -19,6 +20,7 @@ const COMPONENTS = [
   HomepageExperienceComponent,
   HomepageSkillsComponent,
   HomepageCertificationsComponent,
+  HomepageEducationComponent,
 ];
 
 @NgModule({

@@ -1,0 +1,11 @@
+<ng-template [ngIf]="educationData.length" [ngIfElse]="elseTemplate">
+  <div class="card-grid">
+    <div *ngFor="let item of educationData; let i = index" [appReveal]="i">
+      <app-summary-item appTilt class="card h-full" [item]="item"></app-summary-item>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <p class="text-muted">{{ 'EMPTY.EDUCATION' | translate }}</p>
+</ng-template>
